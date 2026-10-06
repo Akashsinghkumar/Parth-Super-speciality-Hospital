@@ -3748,3 +3748,31 @@ button, input, select, textarea {
     font-size: 0.85rem;
   }
 }
+
+/* Word Reveal On Scroll Animation (Desktop & Mobile) */
+.word-reveal-container {
+  overflow: visible;
+}
+
+.word-reveal-enabled .reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: inherit;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.word-reveal-enabled .reveal-word-inner {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(115%);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.word-reveal-enabled .reveal-word.revealed .reveal-word-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+

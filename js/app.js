@@ -173,6 +173,75 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 6000);
   }
 
+  // Featured Testimonial Carousel (Parth Deep Green Card)
+  const featuredReviews = [
+    {
+      name: 'Rahul Bharti',
+      badge: 'Verified Patient, Ranchi',
+      avatar: 'assets/doctors/male-doctor.webp',
+      quote: '"The hospital staff at Parth Super Speciality Hospital is very professional and compassionate. From admission to discharge, everything was seamless. The cleanliness and facilities are excellent, and I felt like I was in safe hands the entire time. Thank you for your outstanding service!"'
+    },
+    {
+      name: 'Anjali Devi',
+      badge: 'Verified Patient, Ranchi',
+      avatar: 'assets/doctors/male-doctor.webp',
+      quote: '"Visited Parth Super Speciality Hospital for my mother’s cardiac checkup. The doctors explained everything transparently and the ICU staff was extremely attentive. Best healthcare facility on Ranchi Ring Road."'
+    },
+    {
+      name: 'Rajesh Verma',
+      badge: 'Verified Patient, Kanke Road',
+      avatar: 'assets/doctors/male-doctor.webp',
+      quote: '"State of the art modular operation facility, clean private rooms, and 24 hours emergency support. I am very satisfied with the orthopedic treatment and compassionate care provided to my family."'
+    },
+    {
+      name: 'Priya Sharma',
+      badge: 'Verified Patient, Ranchi',
+      avatar: 'assets/doctors/male-doctor.webp',
+      quote: '"Prompt emergency response and skilled doctors. My father received immediate attention in the trauma unit and recovered very well. Highly recommend Parth Hospital!"'
+    }
+  ];
+
+  let currentFtIndex = 0;
+  function updateFeaturedReview(index) {
+    const card = document.querySelector('.featured-testimonial-card');
+    const quoteEl = document.querySelector('.ft-quote-text');
+    const nameEl = document.querySelector('.ft-author-name');
+    const badgeEl = document.querySelector('.ft-author-badge');
+    const avatarEl = document.querySelector('.ft-avatar-img');
+    const item = featuredReviews[index];
+    if (!item || !quoteEl) return;
+
+    if (card) card.style.opacity = '0.35';
+    setTimeout(() => {
+      quoteEl.textContent = item.quote;
+      if (nameEl) nameEl.textContent = item.name;
+      if (badgeEl) badgeEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + item.badge;
+      if (avatarEl) avatarEl.src = item.avatar;
+      if (card) card.style.opacity = '1';
+    }, 180);
+  }
+
+  document.querySelectorAll('.ft-prev').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFtIndex = (currentFtIndex - 1 + featuredReviews.length) % featuredReviews.length;
+      updateFeaturedReview(currentFtIndex);
+    });
+  });
+
+  document.querySelectorAll('.ft-next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFtIndex = (currentFtIndex + 1) % featuredReviews.length;
+      updateFeaturedReview(currentFtIndex);
+    });
+  });
+
+  setInterval(() => {
+    if (document.querySelector('.featured-testimonial-card')) {
+      currentFtIndex = (currentFtIndex + 1) % featuredReviews.length;
+      updateFeaturedReview(currentFtIndex);
+    }
+  }, 7000);
+
   // Facility Details Database & Modal
   const facilitiesData = {
     'ecg': {
@@ -340,13 +409,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Story Video Modal
-  const storyModal = document.getElementById('story-modal');
+  // Story Video YouTube Redirection
   window.openStoryModal = function() {
-    if (storyModal) {
-      storyModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+    window.open('https://youtube.com/@parthsuperspecialityhospital?si=C3kUpjVxoIfoDtWG', '_blank', 'noopener,noreferrer');
+  };
+  window.openStoryVideo = function() {
+    window.open('https://youtube.com/@parthsuperspecialityhospital?si=C3kUpjVxoIfoDtWG', '_blank', 'noopener,noreferrer');
   };
 
   // Search Modal

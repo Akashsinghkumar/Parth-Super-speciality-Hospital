@@ -1,5 +1,8 @@
-
-
+/**
+ * Word Reveal On Scroll Animation
+ * Reveals headings word-by-word with smooth slide up & fade on scroll
+ * Optimized for both Desktop and Mobile devices across all pages
+ */
 (function () {
   'use strict';
 
@@ -8,15 +11,22 @@
     'h2.section-title',
     'h2.section-title-dark',
     'h2.section-title-light',
+    'h2.patient-review-main-title',
     'h2.dept-section-title',
     'h2.speciality-title',
     'h2.dept-banner-title',
     'h1.dept-banner-title',
+    'h2.cta-banner-title',
+    'h2.page-about-title',
+    'h2.text-anime-style-3',
+    'h3.text-anime-style-3',
+    '.section-title h2',
+    '.section-title h3',
     '.word-reveal-target',
   ];
 
-  const HEADING_SELECTOR = 'h1, h2, h3, h4, h5, h6';
-  const EXCLUDED_ANCESTORS = 'header, nav, aside, footer, [role="dialog"], .appointment-modal, .modal, .modal-content-custom';
+  const HEADING_SELECTOR = 'h1, h2, h3';
+  const EXCLUDED_ANCESTORS = 'header, nav, aside, footer, .parth-header, .site-header, [role="dialog"], .appointment-modal, .modal, .modal-content-custom, .modal-overlay, .dropdown-menu-custom, .parth-footer';
 
   function wrapWords(el) {
     if (el.dataset.wordRevealDone) return;
@@ -53,16 +63,17 @@
   }
 
   function revealWords(el) {
+    if (!el) return;
     const words = el.querySelectorAll('.reveal-word:not(.revealed)');
     words.forEach(function (word, i) {
       setTimeout(function () {
         word.classList.add('revealed');
-      }, i * 80);
+      }, i * 65);
     });
   }
 
   function init() {
-    // Add CSS if not already present
+    // Add CSS fallback if not already present
     if (!document.getElementById('word-reveal-style')) {
       const style = document.createElement('style');
       style.id = 'word-reveal-style';
@@ -79,8 +90,8 @@
         .word-reveal-enabled .reveal-word-inner {
           display: inline-block;
           opacity: 0;
-          transform: translateY(110%);
-          transition: opacity 0.65s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+          transform: translateY(115%);
+          transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
           will-change: opacity, transform;
         }
         .word-reveal-enabled .reveal-word.revealed .reveal-word-inner {
@@ -94,7 +105,7 @@
     const targets = new Set();
     SELECTORS.forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el) {
-        targets.add(el);
+        if (!el.closest(EXCLUDED_ANCESTORS)) targets.add(el);
       });
     });
 
@@ -125,14 +136,19 @@
         }
       });
     }, {
-      threshold: 0,
-      rootMargin: '0px 0px -10% 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     document.documentElement.classList.add('word-reveal-enabled');
     allTargets.forEach(function (el) {
       observer.observe(el);
     });
+
+    // Safety fallback: reveal all after 3.5s in case of edge cases
+    setTimeout(function () {
+      allTargets.forEach(revealWords);
+    }, 3500);
   }
 
   if (document.readyState === 'loading') {

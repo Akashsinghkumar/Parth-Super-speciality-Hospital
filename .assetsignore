@@ -1,0 +1,12 @@
+node_modules/
+.git/
+.github/
+.wrangler/
+.agent/
+package.json
+package-lock.json
+bun.lockb
+sync-header.js
+sync-header.bat
+server.js
+README.md

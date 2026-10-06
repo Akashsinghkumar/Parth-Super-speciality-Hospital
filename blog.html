@@ -1,0 +1,495 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay updated with healthcare insights, cardiology tips, pediatric advice, and medical news from Parth Super Speciality Hospital, Ranchi.">
+  <meta name="keywords" content="Parth Hospital blog, medical news Ranchi, cardiology health tips, hospital articles">
+  <meta name="author" content="Parth Superspeciality Hospital">
+
+  <title>Blog & News | Parth Super Speciality Hospital | Ranchi</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/parth-logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/parth-logo.png">
+  <link rel="apple-touch-icon" href="assets/parth-logo.png">
+
+  <!-- Google Fonts: Figtree ( Parth Font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Parth Custom CSS -->
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+  <link href="css/department.css" rel="stylesheet" media="screen">
+  <!-- Preloader Script -->
+  <script src="js/preloader.js"></script>
+</head>
+
+<body>
+
+  <!-- START: SITE HEADER (Source: partials/header.html) -->
+<header class="site-header parth-header">
+  <div class="header-container">
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">
+      <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-logo-img">
+      <div class="logo-text-group">
+        <span class="logo-name">Parth<span>Hospital</span></span>
+        <span class="logo-sub">HEALTH IN SAFE HANDS</span>
+      </div>
+    </a>
+
+    <!-- Desktop & Mobile Navigation Links -->
+    <nav class="parth-nav" id="primary-navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link" data-nav="about">About Us <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="director.html">Director</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="departments.html" class="nav-link" data-nav="departments">Department <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a href="internal-medicine.html">Internal Medicine</a></li>
+            <li><a href="ent.html">ENT</a></li>
+            <li><a href="pulmonology.html">Pulmonology</a></li>
+            <li><a href="cardiology.html">Cardiology</a></li>
+          </ul>
+        </li>
+
+        <li><a href="doctors.html" class="nav-link" data-nav="doctors">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li><a href="appointment.html" class="nav-link" data-nav="appointment">Appointment</a></li>
+        <li><a href="blog.html" class="nav-link active" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right Header Actions -->
+    <div class="header-actions">
+      <a href="appointment.html" class="btn-appointment-nav">
+        <span>Book Appointment</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </a>
+
+      <button type="button" class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Open Navigation" aria-controls="primary-navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+<!-- END: SITE HEADER -->
+  <!-- Header End -->
+
+  <!-- Banner -->
+  <section class="dept-page-banner">
+    <div class="container">
+      <div class="dept-banner-inner">
+        <div>
+          <h1 class="dept-banner-title">Blog & News</h1>
+        </div>
+        <ul class="dept-breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">-</li>
+          <li class="active">Blog</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="recent-post our-blog">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Post 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(1)">
+                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Cardiology News">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(1)">Best Medical Network Directory For Physicians & Clients</a></h2>
+              <p>Hypertension, commonly known as high blood pressure, is a prevalent cardiovascular condition requiring routine evaluation and Doppler screening.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(1)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(2)">
+                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Health Checkups">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(2)">The Importance of Regular Health Checkups & Screenings</a></h2>
+              <p>Early symptom detection, blood glucose profiling, and preventive cardiograms detect chronic health ailments before complications arise.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(2)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(3)">
+                  <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Stress Management">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(3)">Managing Stress For Better Heart & Mental Wellness</a></h2>
+              <p>Clinical approaches to maintaining lower cortisol levels, improving sleep architecture, and preventing stress-induced cardiac events.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(3)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(4)">
+                  <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Surgery Care">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(4)">Understanding Your Body: A Modern Surgical Journey</a></h2>
+              <p>Exploring minimally invasive keyhole operations, laparoscopy benefits, and fast-track rehabilitation after abdominal procedures.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(4)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(5)">
+                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Diagnostics">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(5)">Mind Matters: Navigating Neurological & Spine Disorders</a></h2>
+              <p>Understanding early symptoms of spinal disc herniation, neuropathy, stroke warning signs, and microsurgical recovery options.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(5)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="post-item">
+            <div class="post-featured-image">
+              <figure class="image-anime">
+                <a href="javascript:void(0)" onclick="openArticleModal(6)">
+                  <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80" alt="Pediatric Care">
+                </a>
+              </figure>
+            </div>
+            <div class="post-item-body">
+              <h2><a href="javascript:void(0)" onclick="openArticleModal(6)">Pediatric & Newborn Health: When To Visit The NICU</a></h2>
+              <p>Guidance for parents on neonatal jaundice, premature infant care, routine immunization milestones, and respiratory infections.</p>
+            </div>
+            <div class="btn-readmore">
+              <a href="javascript:void(0)" onclick="openArticleModal(6)">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <div class="post-pagination d-inline-flex gap-2">
+            <a href="javascript:void(0)" class="btn-default active" style="padding: 8px 18px; border-radius: 50%;">1</a>
+            <a href="javascript:void(0)" class="btn-default" style="padding: 8px 18px; border-radius: 50%;">2</a>
+            <a href="javascript:void(0)" class="btn-default" style="padding: 8px 18px; border-radius: 50%;">➔</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Our Blog Section End -->
+
+  <footer class="parth-footer">
+    <div class="container footer-main-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand Logo & Mission -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-footer-logo-img">
+            <div class="logo-text-group">
+              <span class="logo-name" style="color: #ffffff; font-weight: 800; font-size: 1.3rem;">Parth<span style="color: #F7A582;">Hospital</span></span>
+              <span class="logo-sub" style="color: rgba(255, 255, 255, 0.6); font-size: 0.75rem; letter-spacing: 1px; display: block;">HEALTH IN SAFE HANDS</span>
+            </div>
+          </a>
+          <p class="footer-brand-text">
+            Our family-centered approach to healthcare ensures that each member of your family receives personalized attention and compassionate care.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@parthsuperspecialityhospital?si=C3kUpjVxoIfoDtWG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com/parthhospitalrnc/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/parthhospitalrnc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Details -->
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Details</h4>
+          <ul class="footer-contact-details">
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span>Ring road, Opp. Jeetu Fuels, Chuttu Neori Ranchi-835217</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+              <a href="mailto:parthsuperspecialityhospital@gmail.com">parthsuperspecialityhospital@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+              <a href="tel:+916202747361">+91 6202747361</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-clock"></i></span>
+              <span>24 Hours Open, Monday - Sunday</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Subscribe To Our Newsletter to stay informed and never miss out on the latest clinical health tips.</p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+            <input type="email" placeholder="Enter Your Email" required class="subscribe-input">
+            <button type="submit" class="subscribe-btn">Send ➔</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-copyright-bar">
+      <div class="container copyright-container">
+        <p>Copyright 2026 © Parth Hospital. All Right Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Main Footer End -->
+
+  <div id="appointment-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close dialog">✕</button>
+      <div id="appointment-form-wrap">
+        <span class="section-tag-peach">APPOINTMENT</span>
+        <h3 class="modal-title">Book an Appointment</h3>
+        <p class="modal-subtitle">Connect with our super specialists at Parth Super Speciality Hospital, Ranchi.</p>
+
+        <form onsubmit="submitAppointment(event)">
+          <div class="form-grid">
+            <div>
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-input" placeholder="e.g. Ramesh Kumar" required>
+            </div>
+            <div>
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-input" placeholder="e.g. +91 98765 43210" required>
+            </div>
+            <div>
+              <label class="form-label">Department *</label>
+              <select class="form-select" required>
+                <option value="Cardiology & 2D Echo">Cardiology & 2D Echo</option>
+                <option value="Neurology & Neurosurgery">Neurology & Neurosurgery</option>
+                <option value="Orthopedic & Joint Care">Orthopedic & Joint Care</option>
+                <option value="General & Laparoscopic Surgery">General & Laparoscopic Surgery</option>
+                <option value="Internal Medicine & Chest">Internal Medicine & Chest</option>
+                <option value="Pediatrics & NICU">Pediatrics & NICU (Newborn)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label">Preferred Date *</label>
+              <input type="date" class="form-input" required>
+            </div>
+            <div style="grid-column: span 2;">
+              <label class="form-label">Health Problem / Symptoms</label>
+              <textarea class="form-textarea" rows="3" placeholder="Briefly describe your symptoms..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-coral-pill" style="width: 100%; justify-content: center; margin-top: 15px;">
+            <span>Confirm Appointment Request</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <div id="appointment-success" style="display: none; text-align: center; padding: 30px 10px;">
+        <div style="font-size: 50px; margin-bottom: 15px;">✅</div>
+        <h3 style="color: var(--primary-color); margin-bottom: 10px;">Appointment Booked Successfully!</h3>
+        <p style="color: #666; line-height: 1.6;">Our reception desk at Parth Hospital, Ranchi will call you shortly to confirm your consultation slot.</p>
+        <button onclick="closeAllModals()" class="btn-coral-pill" style="margin-top: 20px;">
+          <span>Done</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Details Modal -->
+  <div id="article-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeAllModals()" aria-label="Close dialog">✕</button>
+      <div id="article-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const articles = {
+      1: {
+        title: "Best Medical Practices For Cardiac Care & Hypertension",
+        cat: "CARDIOLOGY INSIGHTS",
+        text: "Hypertension (high blood pressure) is often a silent condition. Regular check-ups with 2D Colour Doppler Echocardiography and ambulatory ECG allow cardiologists to evaluate heart chamber thicknesses and valve performance early, minimizing the risk of stroke or myocardial infarction. Parth Hospital's cardiac OPD provides personalized diet plans and modern medication strategies."
+      },
+      2: {
+        title: "The Importance of Regular Health Checkups & Screenings",
+        cat: "PREVENTIVE HEALTH",
+        text: "Routine blood panels, liver and kidney function tests, and digital chest radiography reveal vital baseline health indicators. When detected early, metabolic syndromes like Type-2 Diabetes can be reversed or managed without causing systemic vascular damages."
+      },
+      3: {
+        title: "Managing Stress For Better Heart & Mental Wellness",
+        cat: "WELLNESS & LIFESTYLE",
+        text: "Chronic mental distress elevates cortisol and sympathetic heart rates, exacerbating hypertension. Adopting mindful meditation, regular aerobic activity, and consulting medical professionals helps keep cardiac workload within optimal clinical thresholds."
+      },
+      4: {
+        title: "Understanding Your Body: A Modern Surgical Journey",
+        cat: "SURGICAL EXCELLENCE",
+        text: "Laparoscopic keyhole procedures at Parth Hospital utilize miniature cameras and tiny ports. This results in minimal tissue trauma, minimal post-operative scarring, almost zero blood loss, and allows patients to resume normal routines in just a couple of days."
+      },
+      5: {
+        title: "Mind Matters: Navigating Neurological & Spine Disorders",
+        cat: "NEUROLOGY & SPINE",
+        text: "Persistent lower back pain radiating into legs or unexpected numbness in limbs requires immediate neurosurgical examination. Endoscopic spine surgeries allow decompressing pinched nerve roots safely without extensive muscle cutting."
+      },
+      6: {
+        title: "Pediatric & Newborn Health: When To Visit The NICU",
+        cat: "NEONATOLOGY",
+        text: "Premature delivery or neonatal respiratory distress calls for Level-3 NICU care. Parth Hospital's advanced warmers and infant monitors ensure optimal oxygenation, temperature regulation, and specialized pediatric monitoring 24/7."
+      }
+    };
+
+    function openArticleModal(id) {
+      const art = articles[id] || articles[1];
+      const wrap = document.getElementById("article-content");
+      wrap.innerHTML = `
+        <span class="section-tag-peach">${art.cat}</span>
+        <h3 class="modal-title" style="margin-top: 8px; margin-bottom: 16px;">${art.title}</h3>
+        <p style="color: #555; line-height: 1.8; font-size: 15px; margin-bottom: 24px;">${art.text}</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button onclick="closeAllModals(); openAppointmentModal();" class="btn-coral-pill">
+            <span>Consult Doctor About This</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button onclick="closeAllModals()" class="btn-default">Close</button>
+        </div>
+      `;
+      document.getElementById("article-modal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mainMenu");
+      menu.classList.toggle("show-mobile");
+    }
+
+    function openAppointmentModal() {
+      document.getElementById("appointment-modal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeAllModals() {
+      document.querySelectorAll(".modal-overlay").forEach(m => m.classList.remove("active"));
+      document.body.style.overflow = "";
+    }
+
+    function submitAppointment(e) {
+      e.preventDefault();
+      document.getElementById("appointment-form-wrap").style.display = "none";
+      document.getElementById("appointment-success").style.display = "block";
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      alert("Thank you for subscribing to Parth Hospital updates!");
+      e.target.reset();
+    }
+  </script>
+  <script src="js/app.js"></script>
+  <script src="js/word-reveal.js"></script>
+</body>
+</html>

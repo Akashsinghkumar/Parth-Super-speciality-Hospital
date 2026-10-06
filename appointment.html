@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Appointment | Parth Super Speciality Hospital | Ranchi</title>
+  <meta name="description" content="Book an appointment online with specialist doctors at Parth Super Speciality Hospital, Ranchi. 24x7 emergency medical assistance.">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/parth-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+  <link href="css/department.css" rel="stylesheet" media="screen">
+  <!-- Preloader Script -->
+  <script src="js/preloader.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <!-- START: SITE HEADER (Source: partials/header.html) -->
+<header class="site-header parth-header">
+  <div class="header-container">
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">
+      <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-logo-img">
+      <div class="logo-text-group">
+        <span class="logo-name">Parth<span>Hospital</span></span>
+        <span class="logo-sub">HEALTH IN SAFE HANDS</span>
+      </div>
+    </a>
+
+    <!-- Desktop & Mobile Navigation Links -->
+    <nav class="parth-nav" id="primary-navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link" data-nav="about">About Us <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="director.html">Director</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="departments.html" class="nav-link" data-nav="departments">Department <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a href="internal-medicine.html">Internal Medicine</a></li>
+            <li><a href="ent.html">ENT</a></li>
+            <li><a href="pulmonology.html">Pulmonology</a></li>
+            <li><a href="cardiology.html">Cardiology</a></li>
+          </ul>
+        </li>
+
+        <li><a href="doctors.html" class="nav-link" data-nav="doctors">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li><a href="appointment.html" class="nav-link active" data-nav="appointment">Appointment</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right Header Actions -->
+    <div class="header-actions">
+      <a href="appointment.html" class="btn-appointment-nav">
+        <span>Book Appointment</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </a>
+
+      <button type="button" class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Open Navigation" aria-controls="primary-navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+<!-- END: SITE HEADER -->
+
+  <!-- Banner -->
+  <section class="dept-page-banner">
+    <div class="container">
+      <div class="dept-banner-inner">
+        <div>
+          <h1 class="dept-banner-title">Get Appointment</h1>
+        </div>
+        <ul class="dept-breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">-</li>
+          <li class="active">Appointment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Appointment Section -->
+  <section class="dept-page-section" style="padding: 70px 0;">
+    <div class="container">
+
+      <!-- Column Grid: Left Image, Right Form -->
+      <div class="apt-page-grid">
+
+        <!-- Left: Hospital Building Media -->
+        <div class="apt-building-media">
+          <img src="assets/parth-building.png" alt="Parth Super Speciality Hospital Building">
+        </div>
+
+        <!-- Right: Make An Appointment Form -->
+        <div class="apt-form-card">
+          <h2>Make An Appointment</h2>
+          <form onsubmit="handleAppointmentPageSubmit(event)">
+            <div class="apt-input-grid">
+              <div>
+                <input type="text" class="apt-form-control" placeholder="Your Name *" required>
+              </div>
+              <div>
+                <input type="email" class="apt-form-control" placeholder="Your Email *" required>
+              </div>
+            </div>
+
+            <div class="apt-input-grid">
+              <div>
+                <select class="apt-form-control" required>
+                  <option value="" disabled selected>Select Department</option>
+                  <option value="GENERAL MEDICINE">GENERAL MEDICINE</option>
+                  <option value="GENERAL PHYSICIAN">GENERAL PHYSICIAN</option>
+                  <option value="GYNAECOLOGIST">GYNAECOLOGIST</option>
+                  <option value="GENERAL & LAPAROSCOPIC SURGERY">GENERAL & LAPAROSCOPIC SURGERY</option>
+                  <option value="ORTHOPEDIC">ORTHOPEDIC</option>
+                  <option value="NEURO PHYSICIAN">NEURO PHYSICIAN</option>
+                  <option value="NEURO SURGEON">NEURO SURGEON</option>
+                  <option value="NEPHROLOGY">NEPHROLOGY</option>
+                  <option value="ONCOLOGY">ONCOLOGY</option>
+                  <option value="UROLOGIST">UROLOGIST</option>
+                  <option value="PSYCHIATRY">PSYCHIATRY</option>
+                  <option value="PLASTIC SURGEON">PLASTIC SURGEON</option>
+                  <option value="PULMONOLOGIST">PULMONOLOGIST</option>
+                  <option value="CARDIOLOGY">CARDIOLOGY</option>
+                  <option value="ENT">ENT</option>
+                </select>
+              </div>
+              <div>
+                <select class="apt-form-control" required>
+                  <option value="" disabled selected>Choose Doctor by Name</option>
+                  <option value="DR AVINASH SINGH">DR AVINASH SINGH (Cardiology)</option>
+                  <option value="DR M KUMAR">DR M KUMAR (Cardiology)</option>
+                  <option value="DR MONIKA CHANDRA">DR MONIKA CHANDRA (Gynaecology)</option>
+                  <option value="DR SUSHIL SINGH">DR SUSHIL SINGH (Orthopedics)</option>
+                  <option value="DR ASHISH PAL">DR ASHISH PAL (Neurology)</option>
+                  <option value="DR ASHOK MUNDA">DR ASHOK MUNDA (General Surgery)</option>
+                  <option value="DR SATWIK SAURAV">DR SATWIK SAURAV (Pulmonology)</option>
+                  <option value="DR PK BHAGAT">DR PK BHAGAT (Nephrology)</option>
+                  <option value="DR RAJEEV KUMAR VATSA">DR RAJEEV KUMAR VATSA (Urology)</option>
+                  <option value="DR VIVEK GOSWAMI">DR VIVEK GOSWAMI (General Medicine)</option>
+                  <option value="DR ATRI GANGOPADHYAY">DR ATRI GANGOPADHYAY (ENT)</option>
+                  <option value="DR ABHISHEK KUMAR">DR ABHISHEK KUMAR (Oncology)</option>
+                  <option value="DR MADHUKAR KUMAR">DR MADHUKAR KUMAR (Neuro Surgery)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="apt-input-grid">
+              <div>
+                <input type="tel" class="apt-form-control" placeholder="Phone Number *" required>
+              </div>
+              <div>
+                <input type="date" class="apt-form-control" required>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <select class="apt-form-control" required>
+                <option value="" disabled selected>Select Preferred Time</option>
+                <option value="09:00 AM - 11:00 AM">09:00 AM - 11:00 AM</option>
+                <option value="11:00 AM - 01:00 PM">11:00 AM - 01:00 PM</option>
+                <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+              </select>
+            </div>
+
+            <button type="submit" class="apt-submit-btn">
+              Book Appointment Now <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Emergency Assistance Section (Matching PDF) -->
+      <div class="apt-emergency-callout">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <p class="apt-emergency-tag">With access to</p>
+            <h3 class="apt-emergency-title">24 HOUR EMERGENCY</h3>
+            <h4 class="apt-emergency-sub">Assistance</h4>
+            <p class="apt-emergency-desc">
+              Welcome to Parth Super Speciality Hospital, where compassionate care meets medical excellence. Established with a vision to revolutionize healthcare, we bring together state-of-the-art technology, world-class facilities, and a team of highly skilled medical professionals dedicated to improving lives around the clock.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="tel:+916202747361" class="dept-cta-btn" style="font-size: 1.05rem; padding: 16px 32px; display: inline-flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-phone-volume"></i> +91 6202747361
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="parth-footer">
+    <div class="container footer-main-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand Logo & Mission -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-footer-logo-img">
+            <div class="logo-text-group">
+              <span class="logo-name" style="color: #ffffff; font-weight: 800; font-size: 1.3rem;">Parth<span style="color: #F7A582;">Hospital</span></span>
+              <span class="logo-sub" style="color: rgba(255, 255, 255, 0.6); font-size: 0.75rem; letter-spacing: 1px; display: block;">HEALTH IN SAFE HANDS</span>
+            </div>
+          </a>
+          <p class="footer-brand-text">
+            Our family-centered approach to healthcare ensures that each member of your family receives personalized attention and compassionate care.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@parthsuperspecialityhospital?si=C3kUpjVxoIfoDtWG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com/parthhospitalrnc/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/parthhospitalrnc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Details -->
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Details</h4>
+          <ul class="footer-contact-details">
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span>Ring road, Opp. Jeetu Fuels, Chuttu Neori Ranchi-835217</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+              <a href="mailto:parthsuperspecialityhospital@gmail.com">parthsuperspecialityhospital@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+              <a href="tel:+916202747361">+91 6202747361</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-clock"></i></span>
+              <span>24 Hours Open, Monday - Sunday</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Subscribe To Our Newsletter to stay informed and never miss out on the latest clinical health tips.</p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+            <input type="email" placeholder="Enter Your Email" required class="subscribe-input">
+            <button type="submit" class="subscribe-btn">Send ➔</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-copyright-bar">
+      <div class="container copyright-container">
+        <p>Copyright 2026 © Parth Hospital. All Right Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+  <script src="js/word-reveal.js"></script>
+</body>
+</html>

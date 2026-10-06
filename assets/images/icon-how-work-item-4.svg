@@ -1,0 +1,52 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- CLIPBOARD (Right background) -->
+  <!-- Clipboard Board -->
+  <rect x="42" y="16" width="46" height="66" rx="5" fill="#8d6e63"/>
+  <rect x="45" y="22" width="40" height="56" rx="3" fill="#ffffff"/>
+
+  <!-- Metal Clip at top -->
+  <rect x="55" y="12" width="20" height="9" rx="2" fill="#cfd8dc"/>
+  <rect x="60" y="10" width="10" height="4" rx="1.5" fill="#90a4ae"/>
+  <circle cx="65" cy="15" r="2" fill="#78909c"/>
+
+  <!-- Red Medical Cross Badge on Document -->
+  <circle cx="65" cy="32" r="7.5" fill="#e53935"/>
+  <path d="M65 28V36M61 32H69" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Prescription Text Lines -->
+  <line x1="52" y1="45" x2="78" y2="45" stroke="#b0bec5" stroke-width="2" stroke-linecap="round"/>
+  <line x1="52" y1="51" x2="78" y2="51" stroke="#cfd8dc" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="52" y1="57" x2="78" y2="57" stroke="#cfd8dc" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="52" y1="63" x2="72" y2="63" stroke="#cfd8dc" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="52" y1="69" x2="76" y2="69" stroke="#cfd8dc" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- MEDICINE BOTTLE (Left foreground) -->
+  <!-- Shadow under bottle -->
+  <ellipse cx="29" cy="80" rx="15" ry="3.5" fill="#eceff1" opacity="0.8"/>
+
+  <!-- Bottle Cap (Ribbed Amber/Orange) -->
+  <rect x="18" y="34" width="22" height="10" rx="3" fill="#fb8c00"/>
+  <!-- Cap Ribs -->
+  <line x1="21" y1="36" x2="21" y2="42" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="25" y1="36" x2="25" y2="42" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="29" y1="36" x2="29" y2="42" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="33" y1="36" x2="33" y2="42" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="37" y1="36" x2="37" y2="42" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Bottle Neck -->
+  <rect x="20.5" y="44" width="17" height="3" fill="#cfd8dc"/>
+
+  <!-- Bottle Body (White Cylinder) -->
+  <rect x="19" y="47" width="20" height="29" rx="3" fill="#ffffff" stroke="#eceff1" stroke-width="1"/>
+  <!-- Bottle Base Ring -->
+  <rect x="19" y="74" width="20" height="3" rx="1" fill="#ff7043"/>
+
+  <!-- Bottle Label & Detail -->
+  <rect x="22" y="52" width="14" height="18" fill="#f8f9fa"/>
+  <line x1="24" y1="56" x2="34" y2="56" stroke="#ff7043" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="24" y1="60" x2="34" y2="60" stroke="#90a4ae" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="24" y1="64" x2="31" y2="64" stroke="#cfd8dc" stroke-width="1.4" stroke-linecap="round"/>
+  
+  <!-- Subtle highlight reflection on bottle -->
+  <path d="M21 49V73" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+</svg>

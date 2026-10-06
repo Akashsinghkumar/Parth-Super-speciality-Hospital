@@ -1,0 +1,55 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desk in center -->
+  <rect x="42" y="56" width="16" height="3" rx="1.5" fill="#90a4ae"/>
+  <rect x="49" y="59" width="2.5" height="21" fill="#78909c"/>
+  <rect x="45" y="79" width="10" height="2" rx="1" fill="#546e7a"/>
+
+  <!-- Small medical document / computer monitor on desk -->
+  <path d="M46 51H54V56H46Z" fill="#cfd8dc"/>
+  <path d="M47 52.5H53" stroke="#4dd0e1" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M47 54.5H51" stroke="#ff7043" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- DOCTOR (Left) -->
+  <!-- Doctor Stool/Chair -->
+  <rect x="22" y="66" width="12" height="3" rx="1.5" fill="#37474f"/>
+  <rect x="27" y="69" width="2.5" height="11" fill="#455a64"/>
+  <rect x="22" y="79" width="12" height="2" rx="1" fill="#263238"/>
+
+  <!-- Doctor Body / Lab Coat -->
+  <!-- Legs / Slacks -->
+  <path d="M25 67V77C25 78 27 79 28 79" stroke="#1c3b40" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 67V77C30 78 32 79 33 79" stroke="#1c3b40" stroke-width="3" stroke-linecap="round"/>
+  <!-- Doctor Torso (Light Cyan Coat) -->
+  <path d="M23 48C23 44 26 42 30 42C34 42 37 44 37 48L37 66H23L23 48Z" fill="#80deea"/>
+  <path d="M28 42L30 50L32 42" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M30 50V66" stroke="#4dd0e1" stroke-width="1"/>
+  <!-- Doctor Arm extending toward desk -->
+  <path d="M33 47L42 54L45 56" stroke="#80deea" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="56" r="1.5" fill="#ffcc80"/>
+  <!-- Doctor Head & Hair -->
+  <circle cx="30" cy="36" r="5" fill="#ffcc80"/>
+  <!-- Auburn Hair -->
+  <path d="M26 36C25 32 28 30 31 30C34 30 36 32 35 36C35 37 34 38 34 39C32 38 31 38 29 38C27 38 26 37 26 36Z" fill="#d87040"/>
+  <!-- Ponytail/Bun -->
+  <circle cx="25" cy="35" r="2.5" fill="#bf360c"/>
+
+  <!-- PATIENT (Right) -->
+  <!-- Patient Chair/Stool -->
+  <rect x="66" y="66" width="12" height="3" rx="1.5" fill="#37474f"/>
+  <rect x="71" y="69" width="2.5" height="11" fill="#455a64"/>
+  <rect x="66" y="79" width="12" height="2" rx="1" fill="#263238"/>
+
+  <!-- Patient Legs / Trousers -->
+  <path d="M74 67V77C74 78 72 79 71 79" stroke="#263238" stroke-width="3" stroke-linecap="round"/>
+  <path d="M69 67V77C69 78 67 79 66 79" stroke="#263238" stroke-width="3" stroke-linecap="round"/>
+  <!-- Patient Torso (Orange/Coral Shirt) -->
+  <path d="M63 48C63 44 66 42 70 42C74 42 77 44 77 48L77 66H63L63 48Z" fill="#ff7043"/>
+  <path d="M68 42L70 45L72 42" stroke="#fbe9e7" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Patient Arm resting forward -->
+  <path d="M67 47L58 54L55 56" stroke="#ff7043" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="55" cy="56" r="1.5" fill="#ffcc80"/>
+  <!-- Patient Head & Dark Hair -->
+  <circle cx="70" cy="36" r="5" fill="#ffcc80"/>
+  <path d="M66 35C66 31 69 30 72 30C75 30 75 32 74 34C73 35 71 35 69 35C67 35 66 35 66 35Z" fill="#263238"/>
+  <path d="M72 30C74 30 75 32 75 34" stroke="#263238" stroke-width="2" stroke-linecap="round"/>
+</svg>

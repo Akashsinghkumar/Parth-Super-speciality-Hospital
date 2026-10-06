@@ -1,0 +1,12 @@
+{
+  "name": "parth-hospital",
+  "version": "1.0.0",
+  "description": "Parth Super Speciality Hospital Website",
+  "scripts": {
+    "sync-header": "node sync-header.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Parth Hospital",
+  "license": "ISC"
+}

@@ -1,0 +1,43 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desk Calendar Base Stand -->
+  <rect x="20" y="73" width="62" height="6" rx="3" fill="#80cbc4"/>
+  <rect x="24" y="69" width="54" height="5" rx="2" fill="#ff7043"/>
+  <circle cx="30" cy="71.5" r="2" fill="#004d40"/>
+  <circle cx="72" cy="71.5" r="2" fill="#004d40"/>
+
+  <!-- Calendar Page / Body -->
+  <rect x="26" y="28" width="50" height="42" rx="4" fill="#e0f2f1" stroke="#80cbc4" stroke-width="1.5"/>
+  <!-- Calendar Header Band -->
+  <rect x="26" y="28" width="50" height="9" rx="3" fill="#80cbc4"/>
+
+  <!-- Calendar Rings / Tabs -->
+  <rect x="36" y="24" width="3" height="7" rx="1.5" fill="#e57373"/>
+  <rect x="47" y="24" width="3" height="7" rx="1.5" fill="#e57373"/>
+  <rect x="58" y="24" width="3" height="7" rx="1.5" fill="#e57373"/>
+  <rect x="68" y="24" width="3" height="7" rx="1.5" fill="#e57373"/>
+
+  <!-- Calendar Date Dots / Grid -->
+  <g fill="#004d40" opacity="0.85">
+    <rect x="53" y="44" width="4.5" height="4.5" rx="1.2"/>
+    <rect x="62" y="44" width="4.5" height="4.5" rx="1.2"/>
+    <rect x="53" y="52" width="4.5" height="4.5" rx="1.2"/>
+    <rect x="62" y="52" width="4.5" height="4.5" rx="1.2"/>
+    <rect x="53" y="60" width="4.5" height="4.5" rx="1.2"/>
+    <rect x="62" y="60" width="4.5" height="4.5" rx="1.2"/>
+  </g>
+
+  <!-- Round Clock on Left Foreground -->
+  <circle cx="35" cy="52" r="16.5" fill="#e53935"/>
+  <circle cx="35" cy="52" r="13" fill="#ffffff"/>
+
+  <!-- Clock Tick Marks -->
+  <line x1="35" y1="41" x2="35" y2="43.5" stroke="#e53935" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="35" y1="60.5" x2="35" y2="63" stroke="#e53935" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="24" y1="52" x2="26.5" y2="52" stroke="#e53935" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="43.5" y1="52" x2="46" y2="52" stroke="#e53935" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Clock Hands pointing to 10:10 -->
+  <line x1="35" y1="52" x2="31" y2="45" stroke="#263238" stroke-width="2" stroke-linecap="round"/>
+  <line x1="35" y1="52" x2="41" y2="52" stroke="#263238" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="35" cy="52" r="1.8" fill="#e53935"/>
+</svg>

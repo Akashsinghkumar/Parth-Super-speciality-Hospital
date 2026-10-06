@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Doctors | Parth Super Speciality Hospital | Ranchi</title>
+  <meta name="description" content="Meet our team of experienced doctors and super specialists at Parth Super Speciality Hospital, Ranchi across all clinical departments.">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/parth-logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit (Parth Theme) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet" media="screen">
+  <link href="css/department.css" rel="stylesheet" media="screen">
+  <!-- Preloader Script -->
+  <script src="js/preloader.js"></script>
+
+  <style>
+    .doctors-directory-section {
+      padding: 70px 0 100px;
+      background: var(--dept-bg, #FFF7F4);
+    }
+    .speciality-block {
+      margin-bottom: 65px;
+    }
+    .speciality-title-box {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .speciality-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #07332F;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    .speciality-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: #F7A582;
+      border-radius: 3px;
+    }
+    .doctors-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 420px));
+      justify-content: center;
+      gap: 35px;
+    }
+    .doctors-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 360px));
+      justify-content: center;
+      gap: 30px;
+    }
+    .doctors-grid-1 {
+      display: grid;
+      grid-template-columns: minmax(0, 420px);
+      justify-content: center;
+    }
+    @media (max-width: 991px) {
+      .doctors-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 380px));
+      }
+    }
+    @media (max-width: 767px) {
+      .doctors-grid-2,
+      .doctors-grid-3,
+      .doctors-grid-1 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .doctor-profile-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(7, 51, 47, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      text-align: center;
+      padding-bottom: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .doctor-profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(7, 51, 47, 0.12);
+      border-color: #F7A582;
+    }
+    .doc-avatar-wrap {
+      width: 100%;
+      background: #eef7f4;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 240px;
+    }
+    .doc-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .doctor-profile-card:hover .doc-avatar-wrap img {
+      transform: scale(1.04);
+    }
+    .doc-info-body {
+      padding: 22px 20px 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .doc-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: #07332F;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    .doc-qualification {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #5A6A68;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .doc-btn-wrap {
+      margin-top: 16px;
+    }
+    .doc-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 18px;
+      border-radius: 50px;
+      background: #FFF7F4;
+      color: #07332F;
+      border: 1px solid #F7A582;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .doc-book-btn:hover {
+      background: #07332F;
+      color: #ffffff;
+      border-color: #07332F;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- START: SITE HEADER (Source: partials/header.html) -->
+<header class="site-header parth-header">
+  <div class="header-container">
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">
+      <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-logo-img">
+      <div class="logo-text-group">
+        <span class="logo-name">Parth<span>Hospital</span></span>
+        <span class="logo-sub">HEALTH IN SAFE HANDS</span>
+      </div>
+    </a>
+
+    <!-- Desktop & Mobile Navigation Links -->
+    <nav class="parth-nav" id="primary-navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+
+        <li class="nav-item-dropdown">
+          <a href="about.html" class="nav-link" data-nav="about">About Us <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="director.html">Director</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="departments.html" class="nav-link" data-nav="departments">Department <i class="fa-solid fa-chevron-down dropdown-chevron"></i></a>
+          <ul class="dropdown-menu-custom">
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a href="internal-medicine.html">Internal Medicine</a></li>
+            <li><a href="ent.html">ENT</a></li>
+            <li><a href="pulmonology.html">Pulmonology</a></li>
+            <li><a href="cardiology.html">Cardiology</a></li>
+          </ul>
+        </li>
+
+        <li><a href="doctors.html" class="nav-link active" data-nav="doctors">Doctors</a></li>
+        <li><a href="gallery.html" class="nav-link" data-nav="gallery">Gallery</a></li>
+        <li><a href="appointment.html" class="nav-link" data-nav="appointment">Appointment</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right Header Actions -->
+    <div class="header-actions">
+      <a href="appointment.html" class="btn-appointment-nav">
+        <span>Book Appointment</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </a>
+
+      <button type="button" class="mobile-menu-toggle" onclick="toggleMobileNav()" aria-label="Open Navigation" aria-controls="primary-navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+<!-- END: SITE HEADER -->
+
+  <section class="dept-page-banner">
+    <div class="container">
+      <div class="dept-banner-inner">
+        <div>
+          <h1 class="dept-banner-title">Doctors</h1>
+        </div>
+        <ul class="dept-breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">-</li>
+          <li class="active">Doctors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main class="doctors-directory-section">
+    <div class="container">
+
+      <!-- General Medicine -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">General Medicine</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. P. KUMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. P. KUMAR</h3>
+                <p class="doc-qualification">M.B.B.S, PGDM, MHM, FELLOWSHIP IN PULMOLOGY GENERAL PHYSICIAN & CHEST SPECIALTY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. MAYANK SODHANI">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. MAYANK SODHANI</h3>
+                <p class="doc-qualification">M.B.B.S, MD (MEDICINE)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Neuro Surgeon -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Neuro Surgeon</h2>
+        </div>
+        <div class="doctors-grid-3">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ASHOK KUMAR MUNDA">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ASHOK KUMAR MUNDA</h3>
+                <p class="doc-qualification">M.B.B.S, MCH (NEUROSURGERY), GOLD MEDALIST (RIMS RANCHI), FELLOWSHIP ENDOSCOPIC BRAIN & SPINE SURGERY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. DEEPAK KUMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. DEEPAK KUMAR</h3>
+                <p class="doc-qualification">M.B.B.S, MCH (NEUROSURGERY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. TARIQUE">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. TARIQUE</h3>
+                <p class="doc-qualification">M.B.B.S, MCH (NEUROSURGERY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- General & Laparoscopic Surgery -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">General & Laparoscopic Surgery</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. NIRAJ ANAND">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. NIRAJ ANAND</h3>
+                <p class="doc-qualification">M.B.B.S, MS, CONSULTANT (GENERAL & LAPAROSCOPIC SURGERY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. SUSHIL KUMAR SINGH">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. SUSHIL KUMAR SINGH</h3>
+                <p class="doc-qualification">M.B.B.S, MS (GENERAL SURGERY), CONSULTANT - GENERAL & MINIMALLY INVASIVE LAPAROSCOPIC SURGERY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pediatrics & Neonatology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Pediatrics & Neonatology</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. GOUTAM KUMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. GOUTAM KUMAR</h3>
+                <p class="doc-qualification">M.B.B.S, MD - PEDIATRICS</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ASHISH">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ASHISH</h3>
+                <p class="doc-qualification">M.B.B.S, MD</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cardiology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Cardiology</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. MUKESH">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. MUKESH</h3>
+                <p class="doc-qualification">M.B.B.S, MD, DM (CARDIOLOGY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. AMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. AMAR</h3>
+                <p class="doc-qualification">M.B.B.S, MD, DM (CARDIOLOGY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gynaecologist -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Gynaecologist</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/female-doctor.png" alt="DR. SABHA HUSSAIN">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. SABHA HUSSAIN</h3>
+                <p class="doc-qualification">M.B.B.S, MS OBSTETRICIAN & GYNAECOLOGY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/female-doctor.png" alt="DR. POOJA">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. POOJA</h3>
+                <p class="doc-qualification">M.B.B.S, MS OBSTETRICIAN & GYNAECOLOGY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anesthesiology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Anesthesiology</h2>
+        </div>
+        <div class="doctors-grid-3">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. KAUSHAL">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. KAUSHAL</h3>
+                <p class="doc-qualification">M.B.B.S, MD (ANESTHESIOLOGY), SENIOR CONSULTANT - ANESTHESIOLOGY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. SUPRATIK">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. SUPRATIK</h3>
+                <p class="doc-qualification">M.B.B.S, MD (ANESTHESIOLOGY), CONSULTANT - ANESTHESIOLOGY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ADITYA">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ADITYA</h3>
+                <p class="doc-qualification">M.B.B.S, MD (ANESTHESIOLOGY), CONSULTANT - ANESTHESIOLOGY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Orthopaedic -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Orthopaedic</h2>
+        </div>
+        <div class="doctors-grid-3">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ASHU MALHOTRA">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ASHU MALHOTRA</h3>
+                <p class="doc-qualification">M.B.B.S, DNB (ORTHOPAEDICS), ORTHOPAEDICS & ARTHROSCOPIC SURGEON</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ASHISH PAL">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ASHISH PAL</h3>
+                <p class="doc-qualification">M.B.B.S, D. ORTHO, MS (ORTHOPAEDICS), GOLD MEDALIST, SENIOR CONSULTATION - ORTHOPAEDICS</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. SAPAN KUMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. SAPAN KUMAR</h3>
+                <p class="doc-qualification">M.B.B.S, MS, ORTHOPAEDICS SURGEON</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gastroenterology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Gastroenterology</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. MAYANK">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. MAYANK</h3>
+                <p class="doc-qualification">M.B.B.S, MS, MCH SURGICAL GASTROENTEROLOGY, CONSULTANT - GASTROENTEROLOGY & GI SURGERY</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Urology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Urology</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. PANKAJ">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. PANKAJ</h3>
+                <p class="doc-qualification">M.B.B.S, MS, MCH (UROLOGY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ophthalmology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Ophthalmology</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/female-doctor.png" alt="DR. ABHINITI SIDDHARTH">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ABHINITI SIDDHARTH</h3>
+                <p class="doc-qualification">M.B.B.S, DOMS (RIMS), DNB (LVPEI)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. TARUN">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. TARUN</h3>
+                <p class="doc-qualification">M.B.B.S, DOMS (RIMS), DNB (IGH ROURKELA)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENT -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">ENT</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ABHIJIT KUMAR">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ABHIJIT KUMAR</h3>
+                <p class="doc-qualification">M.B.B.S, MS (OTO-RHINO-LARYNGOLOGY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Oral & Maxillofacial -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Oral & Maxillofacial</h2>
+        </div>
+        <div class="doctors-grid-2">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. SAURAV">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. SAURAV</h3>
+                <p class="doc-qualification">MDS, CONSULTANT - ORAL & MAXILLOFACIAL</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ABHISHEK">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ABHISHEK</h3>
+                <p class="doc-qualification">MDS, CONSULTANT - ORAL & MAXILLOFACIAL</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nephrology -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Nephrology</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. ANURAG GUPTA">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. ANURAG GUPTA</h3>
+                <p class="doc-qualification">M.B.B.S, MD, DNB (NEPHROLOGY)</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Physiotherapy -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Physiotherapy</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. RAHUL SINGH(PT)">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. RAHUL SINGH (PT)</h3>
+                <p class="doc-qualification">(PT) B.P.TH (RGUHS) MANGALORE, CERTIFIED INTERNATIONAL MANUAL THERAPIST - COMT (MICHIGAN, USA), MIAP, JSCPT</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plastic & Reconstructive Surgery -->
+      <section class="speciality-block">
+        <div class="speciality-title-box">
+          <h2 class="speciality-title">Plastic & Reconstructive Surgery</h2>
+        </div>
+        <div class="doctors-grid-1">
+          <div class="doctor-profile-card">
+              <div class="doc-avatar-wrap">
+                <img src="assets/doctors/male-doctor.webp" alt="DR. TANMAY PRASAD">
+              </div>
+              <div class="doc-info-body">
+                <h3 class="doc-name">DR. TANMAY PRASAD</h3>
+                <p class="doc-qualification">M.B.B.S, MS, MCH PLASTIC SURGEON</p>
+                <div class="doc-btn-wrap">
+                  <a href="appointment.html" class="doc-book-btn">Book Appointment <i class="fa-solid fa-calendar-check"></i></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="parth-footer">
+    <div class="container footer-main-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand Logo & Mission -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="assets/parth-logo.png" alt="Parth Hospital Logo" class="parth-footer-logo-img">
+            <div class="logo-text-group">
+              <span class="logo-name" style="color: #ffffff; font-weight: 800; font-size: 1.3rem;">Parth<span style="color: #F7A582;">Hospital</span></span>
+              <span class="logo-sub" style="color: rgba(255, 255, 255, 0.6); font-size: 0.75rem; letter-spacing: 1px; display: block;">HEALTH IN SAFE HANDS</span>
+            </div>
+          </a>
+          <p class="footer-brand-text">
+            Our family-centered approach to healthcare ensures that each member of your family receives personalized attention and compassionate care.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@parthsuperspecialityhospital?si=C3kUpjVxoIfoDtWG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com/parthhospitalrnc/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/parthhospitalrnc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Details -->
+        <div class="footer-col">
+          <h4 class="footer-title">Contact Details</h4>
+          <ul class="footer-contact-details">
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span>Ring road, Opp. Jeetu Fuels, Chuttu Neori Ranchi-835217</span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+              <a href="mailto:parthsuperspecialityhospital@gmail.com">parthsuperspecialityhospital@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+              <a href="tel:+916202747361">+91 6202747361</a>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fa-solid fa-clock"></i></span>
+              <span>24 Hours Open, Monday - Sunday</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="footer-newsletter-text">Subscribe To Our Newsletter to stay informed and never miss out on the latest clinical health tips.</p>
+          <form class="footer-subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+            <input type="email" placeholder="Enter Your Email" required class="subscribe-input">
+            <button type="submit" class="subscribe-btn">Send ➔</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-copyright-bar">
+      <div class="container copyright-container">
+        <p>Copyright 2026 © Parth Hospital. All Right Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+  <script src="js/word-reveal.js"></script>
+</body>
+</html>

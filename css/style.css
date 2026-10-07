@@ -1,22 +1,28 @@
 
 
 :root {
-  --primary-green: #0c2d28;
-  --dark-green-1: #092520;
-  --dark-green-2: #061d19;
-  --dark-green-deep: #051613;
-  --coral-peach: #F7A582;
-  --coral-hover: #e8906a;
-  --mint-light: #a0c2b9;
-  --mint-subtext: #8aa89f;
+  --primary-green: #0d8a82;         /* Teal - changes with color picker */
+  --dark-green-1: #12a89f;
+  --dark-green-2: #0a6b64;          /* Fixed - header & footer color */
+  --dark-green-deep: #065550;       /* Fixed - footer copyright bar */
+  --coral-peach: #1a7fc7;           /* Medical Blue - Accent */
+  --coral-hover: #1568a8;
+  --mint-light: #a0e8e4;
+  --mint-subtext: #e0f9f8;
 
   --bg-white: #ffffff;
-  --bg-soft-gray: #f8faf9;
-  --border-light: #e4ebe8;
+  --bg-soft-gray: #f0fbfb;
+  --border-light: #d0f0ee;
 
-  --text-dark: #0c2d28;
-  --text-gray: #61736e;
+  --text-dark: #1a2d4a;
+  --text-gray: #4a6080;
   --text-white: #ffffff;
+
+  --primary-color: #0d8a82;
+  --accent-color: #1a7fc7;
+  --light-Background: #1a2d4a;
+  --light-accent-color: #e8faf9;
+  --body-background: #ffffff;
 
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
@@ -377,7 +383,7 @@ button, input, select, textarea {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #07332F !important;
+  background-color: #0a6b64 !important;
   z-index: 9999;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px 0;
@@ -488,7 +494,8 @@ button, input, select, textarea {
 }
 
 .nav-link.active {
-  color: #F7A582;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .header-actions {
@@ -505,7 +512,7 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #F7A582;
+  background: var(--coral-peach);
   color: #07332F;
   border: none;
   border-radius: 50px;
@@ -566,9 +573,17 @@ button, input, select, textarea {
 
 .parth-hero {
   position: relative;
-  background-color: var(--primary-green);
-  padding: 80px 0 140px 0;
+  background: linear-gradient(135deg, #e8faf9 0%, #f0fdfc 50%, #ffffff 100%);
+  padding: 80px 0 100px 0;
   overflow: hidden;
+}
+
+.parth-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
 }
 
 /* Dot grid patterns matching Parth screenshot */
@@ -578,9 +593,22 @@ button, input, select, textarea {
   right: 48%;
   width: 120px;
   height: 60px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(32, 178, 170, 0.15) 1.5px, transparent 1.5px);
   background-size: 14px 14px;
   pointer-events: none;
+  z-index: 1;
+}
+
+.hero-dot-grid-2 {
+  position: absolute;
+  bottom: 80px;
+  left: 42%;
+  width: 100px;
+  height: 80px;
+  background-image: radial-gradient(rgba(30, 144, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-peach-bokeh {
@@ -590,9 +618,10 @@ button, input, select, textarea {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--coral-peach);
-  box-shadow: 0 0 12px var(--coral-peach);
+  background: #20b2aa;
+  box-shadow: 0 0 18px rgba(32, 178, 170, 0.5);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-wave-curve {
@@ -602,9 +631,29 @@ button, input, select, textarea {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(30, 144, 255, 0.08);
   transform: translate(-30%, 40%);
   pointer-events: none;
+  z-index: 1;
+}
+
+/* Extra decorative circles - hospital feel */
+.parth-hero::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -627,7 +676,7 @@ button, input, select, textarea {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 2px;
-  color: var(--mint-light);
+  color: var(--primary-green);
   margin-bottom: 18px;
 }
 
@@ -635,7 +684,7 @@ button, input, select, textarea {
   font-family: var(--font-heading);
   font-size: 3.5rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-dark);
   line-height: 1.18;
   margin-bottom: 22px;
   letter-spacing: -0.6px;
@@ -643,10 +692,11 @@ button, input, select, textarea {
 
 .hero-desc {
   font-size: 1.02rem;
-  color: var(--mint-subtext);
+  color: var(--text-gray);
   line-height: 1.75;
   max-width: 500px;
   margin-bottom: 34px;
+  font-weight: 500;
 }
 
 .hero-btn-group {
@@ -716,6 +766,94 @@ button, input, select, textarea {
 .hero-pill-2:hover .hero-pill-inner {
   transform: translateY(-6px);
   box-shadow: 0 32px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Hero Doctor Image (Reference Style) ─────────────────── */
+.hero-image-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-doctor-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.hero-doctor-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+  display: block;
+}
+
+.hero-badge-experience {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  background: var(--primary-green);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.hero-badge-experience .badge-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-badge-experience .badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.hero-badge-patients {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  background: #fff;
+  color: var(--text-dark);
+  padding: 12px 18px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: 1px solid var(--border-light);
+}
+
+.hero-badge-patients .badge-icon {
+  font-size: 1.5rem;
+}
+
+.hero-badge-patients .badge-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .hero-image-section {
+    display: none;
+  }
+  .hero-badge-experience,
+  .hero-badge-patients {
+    display: none;
+  }
 }
 
 .hero-pill-img {
@@ -2011,7 +2149,7 @@ button, input, select, textarea {
 }
 
 .parth-footer {
-  background-color: var(--dark-green-2);
+  background-color: #0a6b64;
   color: rgba(255, 255, 255, 0.8);
   padding-top: 80px;
 }
@@ -2169,7 +2307,7 @@ button, input, select, textarea {
 }
 
 .footer-copyright-bar {
-  background-color: var(--dark-green-deep);
+  background-color: #065550;
   padding: 22px 0;
   margin-top: 60px;
 }
@@ -3776,3 +3914,26 @@ button, input, select, textarea {
   transform: translateY(0);
 }
 
+
+/* ── Pagination Buttons (no shutter overflow) ──────────────────────── */
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.pagination-btn:hover,
+.pagination-btn.active {
+  background: var(--primary-green);
+  color: #fff;
+}

@@ -23,6 +23,22 @@
     '.section-title h2',
     '.section-title h3',
     '.word-reveal-target',
+    // Paragraph and descriptive text — added for all-page coverage
+    '.hero-desc',
+    '.section-desc-gray',
+    '.page-about-text',
+    '.improving-body p',
+    '.health-services-content p',
+    '.dept-intro-text',
+    '.about-page-text',
+    'p.section-desc',
+    '.services-content p',
+    '.blog-desc p',
+    '.cta-banner-desc',
+    '.health-info-content p',
+    '.dept-card-desc',
+    '.director-text p',
+    '.contact-info-text',
   ];
 
   const HEADING_SELECTOR = 'h1, h2, h3';

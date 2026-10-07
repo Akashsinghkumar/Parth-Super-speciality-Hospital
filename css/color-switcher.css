@@ -1,0 +1,536 @@
+/* ============================================
+   Color Switcher - Theme Variables & Styles
+   ============================================ */
+
+/* Default Theme - Parth Original */
+:root,
+html[data-theme="parth-original"] {
+    --primary-green: #0c2d28;
+    --dark-green-1: #1a4a42;
+    --dark-green-2: #165a4f;
+    --dark-green-deep: #081f1c;
+    --coral-peach: #F7A582;
+    --coral-hover: #e89370;
+    --mint-light: #9fc9c3;
+    --mint-subtext: #d9efed;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #0c2d28;
+    --accent-color: #F7A582;
+}
+
+/* Medicoz Blue Theme */
+html[data-theme="medicoz-blue"] {
+    --primary-green: #1370b5;
+    --dark-green-1: #3f8ec7;
+    --dark-green-2: #2d82c0;
+    --dark-green-deep: #0f5a91;
+    --coral-peach: #13bfb3;
+    --coral-hover: #11a89d;
+    --mint-light: #8dc8e0;
+    --mint-subtext: #d4ebf4;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #1370b5;
+    --accent-color: #13bfb3;
+}
+
+/* Teal Blue Theme */
+html[data-theme="teal-blue"] {
+    --primary-green: #13bfb3;
+    --dark-green-1: #3fcfc5;
+    --dark-green-2: #2dc8bd;
+    --dark-green-deep: #0f998f;
+    --coral-peach: #1370b5;
+    --coral-hover: #10609a;
+    --mint-light: #8de8e0;
+    --mint-subtext: #d4f7f4;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #13bfb3;
+    --accent-color: #1370b5;
+}
+
+/* Scarlet Coral Theme */
+html[data-theme="scarlet-coral"] {
+    --primary-green: #ef5b3f;
+    --dark-green-1: #f2826f;
+    --dark-green-2: #f17561;
+    --dark-green-deep: #bf4932;
+    --coral-peach: #f79783;
+    --coral-hover: #e88571;
+    --mint-light: #f9bfb3;
+    --mint-subtext: #fce6e1;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #ef5b3f;
+    --accent-color: #f79783;
+}
+
+/* Kelly Green Theme */
+html[data-theme="kelly-green"] {
+    --primary-green: #7fc540;
+    --dark-green-1: #9fd366;
+    --dark-green-2: #92cd56;
+    --dark-green-deep: #659d33;
+    --coral-peach: #a7dc72;
+    --coral-hover: #95c660;
+    --mint-light: #cfeab3;
+    --mint-subtext: #edf8df;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #7fc540;
+    --accent-color: #a7dc72;
+}
+
+/* Dodger Blue Theme */
+html[data-theme="dodger-blue"] {
+    --primary-green: #105abf;
+    --dark-green-1: #3f7fcf;
+    --dark-green-2: #2d6fc9;
+    --dark-green-deep: #0d4899;
+    --coral-peach: #5493ea;
+    --coral-hover: #4280d3;
+    --mint-light: #8abef0;
+    --mint-subtext: #d4e6f9;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #105abf;
+    --accent-color: #5493ea;
+}
+
+/* Medical Red Theme */
+html[data-theme="medical-red"] {
+    --primary-green: #c90f40;
+    --dark-green-1: #d73d66;
+    --dark-green-2: #d32b56;
+    --dark-green-deep: #a10c33;
+    --coral-peach: #e85c80;
+    --coral-hover: #d24a6f;
+    --mint-light: #f4a8bd;
+    --mint-subtext: #fce0e9;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #c90f40;
+    --accent-color: #e85c80;
+}
+
+/* Amber Gold Theme */
+html[data-theme="amber-gold"] {
+    --primary-green: #dab600;
+    --dark-green-1: #e3c933;
+    --dark-green-2: #dfc11a;
+    --dark-green-deep: #ae9200;
+    --coral-peach: #f5d847;
+    --coral-hover: #dcc23f;
+    --mint-light: #faeea6;
+    --mint-subtext: #fdf9dc;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #dab600;
+    --accent-color: #f5d847;
+}
+
+/* Deep Maroon Theme */
+html[data-theme="deep-maroon"] {
+    --primary-green: #70012c;
+    --dark-green-1: #912152;
+    --dark-green-2: #831340;
+    --dark-green-deep: #590123;
+    --coral-peach: #b53c69;
+    --coral-hover: #a1355d;
+    --mint-light: #d894b1;
+    --mint-subtext: #f3dbe5;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #70012c;
+    --accent-color: #b53c69;
+}
+
+/* Warm Brown Theme */
+html[data-theme="warm-brown"] {
+    --primary-green: #562424;
+    --dark-green-1: #7a4848;
+    --dark-green-2: #6c3838;
+    --dark-green-deep: #451d1d;
+    --coral-peach: #965858;
+    --coral-hover: #844e4e;
+    --mint-light: #c9a8a8;
+    --mint-subtext: #ece0e0;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #562424;
+    --accent-color: #965858;
+}
+
+/* Emerald Green Theme */
+html[data-theme="emerald-green"] {
+    --primary-green: #018f55;
+    --dark-green-1: #2daa75;
+    --dark-green-2: #1a9e67;
+    --dark-green-deep: #017244;
+    --coral-peach: #3ec28a;
+    --coral-hover: #38ae7c;
+    --mint-light: #99e1c2;
+    --mint-subtext: #daf5ea;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #018f55;
+    --accent-color: #3ec28a;
+}
+
+/* Duchess Blue Theme */
+html[data-theme="duchess-blue"] {
+    --primary-green: #00154e;
+    --dark-green-1: #1f3b75;
+    --dark-green-2: #122d66;
+    --dark-green-deep: #00103e;
+    --coral-peach: #1370b5;
+    --coral-hover: #1063a2;
+    --mint-light: #8091b3;
+    --mint-subtext: #d9dde8;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #00154e;
+    --accent-color: #1370b5;
+}
+
+/* Light Blue Theme */
+html[data-theme="light-blue"] {
+    --primary-green: #007caf;
+    --dark-green-1: #33a0c6;
+    --dark-green-2: #1a90bd;
+    --dark-green-deep: #00638c;
+    --coral-peach: #42b2df;
+    --coral-hover: #3aa0c9;
+    --mint-light: #99d9ef;
+    --mint-subtext: #d9f1f9;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #007caf;
+    --accent-color: #42b2df;
+}
+
+/* French Slate Theme */
+html[data-theme="french-slate"] {
+    --primary-green: #353f4b;
+    --dark-green-1: #5f6a77;
+    --dark-green-2: #4f5963;
+    --dark-green-deep: #2a323c;
+    --coral-peach: #6e7f94;
+    --coral-hover: #5f7084;
+    --mint-light: #b7c2cd;
+    --mint-subtext: #e4e8ec;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #353f4b;
+    --accent-color: #6e7f94;
+}
+
+/* Magenta Theme */
+html[data-theme="magenta"] {
+    --primary-green: #ec008b;
+    --dark-green-1: #f033a5;
+    --dark-green-2: #ee1a99;
+    --dark-green-deep: #bd006f;
+    --coral-peach: #f75ab5;
+    --coral-hover: #e049a2;
+    --mint-light: #fbadd9;
+    --mint-subtext: #fee4f4;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #ec008b;
+    --accent-color: #f75ab5;
+}
+
+/* Signal Violet Theme */
+html[data-theme="signal-violet"] {
+    --primary-green: #65365a;
+    --dark-green-1: #8a5f7c;
+    --dark-green-2: #7a4e6d;
+    --dark-green-deep: #512b48;
+    --coral-peach: #9e6090;
+    --coral-hover: #8d5681;
+    --mint-light: #ceb0c7;
+    --mint-subtext: #ede2eb;
+    --bg-soft-gray: #f5f6f7;
+    --border-light: #e0e0e0;
+    --text-dark: #1a1a2e;
+    --text-gray: #555;
+    --primary-color: #65365a;
+    --accent-color: #9e6090;
+}
+
+/* ============================================
+   Toggle Button (Gear Icon)
+   ============================================ */
+
+.cs-toggle-btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.cs-toggle-btn:hover {
+    background: var(--dark-green-deep);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: -3px 3px 16px rgba(0, 0, 0, 0.25);
+}
+
+.cs-toggle-btn svg,
+.cs-toggle-btn i {
+    transition: transform 0.4s ease;
+}
+
+body.cs-panel-open .cs-toggle-btn svg,
+body.cs-panel-open .cs-toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   Color Switcher Panel
+   ============================================ */
+
+.cs-panel {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 10000;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-panel.cs-open {
+    right: 0;
+}
+
+/* Panel Header */
+.cs-panel-header {
+    padding: 16px 20px;
+    background: var(--primary-green);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cs-panel-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.cs-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.cs-close-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Panel Body */
+.cs-panel-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.cs-panel-body p,
+.cs-panel-body label {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* ============================================
+   Color Swatches Grid
+   ============================================ */
+
+.cs-swatches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.cs-swatch {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 44px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cs-swatch:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cs-swatch.cs-active {
+    border-color: #333;
+    box-shadow: 0 0 0 2px #333;
+}
+
+.cs-swatch-primary {
+    height: 70%;
+    width: 100%;
+}
+
+.cs-swatch-accent {
+    height: 30%;
+    width: 100%;
+}
+
+.cs-swatch.cs-active::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.cs-swatch-label {
+    display: none;
+}
+
+/* ============================================
+   Reset Button
+   ============================================ */
+
+.cs-reset-btn {
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #444;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cs-reset-btn:hover {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+/* ============================================
+   Overlay/Backdrop
+   ============================================ */
+
+.cs-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cs-overlay.cs-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media screen and (max-width: 400px) {
+    .cs-panel {
+        width: 280px;
+        right: -300px;
+    }
+    
+    .cs-swatches {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ============================================
+   Smooth Transitions for Theme Changes
+   ============================================ */
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Prevent transition on page load */
+.preload * {
+    transition: none !important;
+}

@@ -11,7 +11,7 @@
 }
 
 .dept-page-banner {
-  background: linear-gradient(135deg, #07332F 0%, #0d4641 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green-1) 100%);
   position: relative;
   padding: 60px 0 65px;
   overflow: hidden;

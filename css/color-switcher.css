@@ -5,10 +5,10 @@
 /* Default Theme - Parth Original */
 :root,
 html[data-theme="parth-original"] {
-    --primary-green: #0c2d28;
-    --dark-green-1: #1a4a42;
-    --dark-green-2: #165a4f;
-    --dark-green-deep: #081f1c;
+    --primary-green: #1a5c52;
+    --dark-green-1: #2e7a6e;
+    --dark-green-2: #24705f;
+    --dark-green-deep: #124840;
     --coral-peach: #F7A582;
     --coral-hover: #e89370;
     --mint-light: #9fc9c3;
@@ -17,52 +17,55 @@ html[data-theme="parth-original"] {
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #0c2d28;
+    --primary-color: #1a5c52;
     --accent-color: #F7A582;
+    --transparent-color: #555;
 }
 
 /* Medicoz Blue Theme */
 html[data-theme="medicoz-blue"] {
-    --primary-green: #1370b5;
-    --dark-green-1: #3f8ec7;
-    --dark-green-2: #2d82c0;
-    --dark-green-deep: #0f5a91;
-    --coral-peach: #13bfb3;
-    --coral-hover: #11a89d;
+    --primary-green: #1a7fc7;
+    --dark-green-1: #3f96d4;
+    --dark-green-2: #2d8bc9;
+    --dark-green-deep: #1468a8;
+    --coral-peach: #20cfc2;
+    --coral-hover: #1ab9ad;
     --mint-light: #8dc8e0;
     --mint-subtext: #d4ebf4;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #1370b5;
-    --accent-color: #13bfb3;
+    --primary-color: #1a7fc7;
+    --accent-color: #20cfc2;
+    --transparent-color: #555;
 }
 
 /* Teal Blue Theme */
 html[data-theme="teal-blue"] {
-    --primary-green: #13bfb3;
+    --primary-green: #17b5aa;
     --dark-green-1: #3fcfc5;
     --dark-green-2: #2dc8bd;
     --dark-green-deep: #0f998f;
-    --coral-peach: #1370b5;
-    --coral-hover: #10609a;
+    --coral-peach: #2a82c7;
+    --coral-hover: #2272b0;
     --mint-light: #8de8e0;
     --mint-subtext: #d4f7f4;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #13bfb3;
-    --accent-color: #1370b5;
+    --primary-color: #17b5aa;
+    --accent-color: #2a82c7;
+    --transparent-color: #555;
 }
 
 /* Scarlet Coral Theme */
 html[data-theme="scarlet-coral"] {
-    --primary-green: #ef5b3f;
-    --dark-green-1: #f2826f;
-    --dark-green-2: #f17561;
-    --dark-green-deep: #bf4932;
+    --primary-green: #e84e34;
+    --dark-green-1: #f2726a;
+    --dark-green-2: #ed6254;
+    --dark-green-deep: #c44028;
     --coral-peach: #f79783;
     --coral-hover: #e88571;
     --mint-light: #f9bfb3;
@@ -71,466 +74,510 @@ html[data-theme="scarlet-coral"] {
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #ef5b3f;
+    --primary-color: #e84e34;
     --accent-color: #f79783;
+    --transparent-color: #555;
 }
 
 /* Kelly Green Theme */
 html[data-theme="kelly-green"] {
-    --primary-green: #7fc540;
-    --dark-green-1: #9fd366;
-    --dark-green-2: #92cd56;
-    --dark-green-deep: #659d33;
-    --coral-peach: #a7dc72;
-    --coral-hover: #95c660;
+    --primary-green: #6aad2e;
+    --dark-green-1: #87c44e;
+    --dark-green-2: #78bc3e;
+    --dark-green-deep: #549122;
+    --coral-peach: #9fd95c;
+    --coral-hover: #8dc44c;
     --mint-light: #cfeab3;
     --mint-subtext: #edf8df;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #7fc540;
-    --accent-color: #a7dc72;
+    --primary-color: #6aad2e;
+    --accent-color: #9fd95c;
+    --transparent-color: #555;
 }
 
 /* Dodger Blue Theme */
 html[data-theme="dodger-blue"] {
-    --primary-green: #105abf;
-    --dark-green-1: #3f7fcf;
-    --dark-green-2: #2d6fc9;
-    --dark-green-deep: #0d4899;
-    --coral-peach: #5493ea;
-    --coral-hover: #4280d3;
-    --mint-light: #8abef0;
-    --mint-subtext: #d4e6f9;
+    --primary-green: #2a6fcc;
+    --dark-green-1: #4a89d9;
+    --dark-green-2: #3a7ed4;
+    --dark-green-deep: #1e5cba;
+    --coral-peach: #5c9ef0;
+    --coral-hover: #4a8edc;
+    --mint-light: #9dc5f5;
+    --mint-subtext: #d8eafb;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #105abf;
-    --accent-color: #5493ea;
+    --primary-color: #2a6fcc;
+    --accent-color: #5c9ef0;
+    --transparent-color: #555;
 }
 
 /* Medical Red Theme */
 html[data-theme="medical-red"] {
-    --primary-green: #c90f40;
-    --dark-green-1: #d73d66;
-    --dark-green-2: #d32b56;
-    --dark-green-deep: #a10c33;
-    --coral-peach: #e85c80;
-    --coral-hover: #d24a6f;
+    --primary-green: #c42042;
+    --dark-green-1: #d94565;
+    --dark-green-2: #d03458;
+    --dark-green-deep: #a81938;
+    --coral-peach: #e86885;
+    --coral-hover: #d45878;
     --mint-light: #f4a8bd;
     --mint-subtext: #fce0e9;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #c90f40;
-    --accent-color: #e85c80;
+    --primary-color: #c42042;
+    --accent-color: #e86885;
+    --transparent-color: #555;
 }
 
 /* Amber Gold Theme */
 html[data-theme="amber-gold"] {
-    --primary-green: #dab600;
-    --dark-green-1: #e3c933;
-    --dark-green-2: #dfc11a;
-    --dark-green-deep: #ae9200;
-    --coral-peach: #f5d847;
-    --coral-hover: #dcc23f;
-    --mint-light: #faeea6;
-    --mint-subtext: #fdf9dc;
+    --primary-green: #b8960a;
+    --dark-green-1: #ccaa20;
+    --dark-green-2: #c2a015;
+    --dark-green-deep: #9a7d08;
+    --coral-peach: #d4b824;
+    --coral-hover: #bfa41e;
+    --mint-light: #f0dc7a;
+    --mint-subtext: #fdf4c0;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #dab600;
-    --accent-color: #f5d847;
+    --primary-color: #b8960a;
+    --accent-color: #d4b824;
+    --transparent-color: #555;
 }
 
 /* Deep Maroon Theme */
 html[data-theme="deep-maroon"] {
-    --primary-green: #70012c;
-    --dark-green-1: #912152;
-    --dark-green-2: #831340;
-    --dark-green-deep: #590123;
-    --coral-peach: #b53c69;
-    --coral-hover: #a1355d;
-    --mint-light: #d894b1;
-    --mint-subtext: #f3dbe5;
+    --primary-green: #a0154a;
+    --dark-green-1: #be3866;
+    --dark-green-2: #af2858;
+    --dark-green-deep: #88103e;
+    --coral-peach: #d05080;
+    --coral-hover: #be4472;
+    --mint-light: #e8a0be;
+    --mint-subtext: #f7dde8;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #70012c;
-    --accent-color: #b53c69;
+    --primary-color: #a0154a;
+    --accent-color: #d05080;
+    --transparent-color: #555;
 }
 
 /* Warm Brown Theme */
 html[data-theme="warm-brown"] {
-    --primary-green: #562424;
-    --dark-green-1: #7a4848;
-    --dark-green-2: #6c3838;
-    --dark-green-deep: #451d1d;
-    --coral-peach: #965858;
-    --coral-hover: #844e4e;
-    --mint-light: #c9a8a8;
-    --mint-subtext: #ece0e0;
+    --primary-green: #8b4545;
+    --dark-green-1: #a86262;
+    --dark-green-2: #9c5454;
+    --dark-green-deep: #743838;
+    --coral-peach: #c07878;
+    --coral-hover: #ae6868;
+    --mint-light: #e0b8b8;
+    --mint-subtext: #f5e5e5;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #562424;
-    --accent-color: #965858;
+    --primary-color: #8b4545;
+    --accent-color: #c07878;
+    --transparent-color: #555;
 }
 
 /* Emerald Green Theme */
 html[data-theme="emerald-green"] {
-    --primary-green: #018f55;
-    --dark-green-1: #2daa75;
-    --dark-green-2: #1a9e67;
-    --dark-green-deep: #017244;
-    --coral-peach: #3ec28a;
-    --coral-hover: #38ae7c;
-    --mint-light: #99e1c2;
-    --mint-subtext: #daf5ea;
+    --primary-green: #0fa862;
+    --dark-green-1: #2dbf7a;
+    --dark-green-2: #1cb570;
+    --dark-green-deep: #0c8e52;
+    --coral-peach: #3ed695;
+    --coral-hover: #30c485;
+    --mint-light: #99e8c6;
+    --mint-subtext: #d9f7ed;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #018f55;
-    --accent-color: #3ec28a;
+    --primary-color: #0fa862;
+    --accent-color: #3ed695;
+    --transparent-color: #555;
 }
 
 /* Duchess Blue Theme */
 html[data-theme="duchess-blue"] {
-    --primary-green: #00154e;
-    --dark-green-1: #1f3b75;
-    --dark-green-2: #122d66;
-    --dark-green-deep: #00103e;
-    --coral-peach: #1370b5;
-    --coral-hover: #1063a2;
-    --mint-light: #8091b3;
-    --mint-subtext: #d9dde8;
+    --primary-green: #1a3d7a;
+    --dark-green-1: #2e5898;
+    --dark-green-2: #244c8a;
+    --dark-green-deep: #143268;
+    --coral-peach: #2a7fd4;
+    --coral-hover: #2070c0;
+    --mint-light: #8aaad8;
+    --mint-subtext: #d9e4f5;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #00154e;
-    --accent-color: #1370b5;
+    --primary-color: #1a3d7a;
+    --accent-color: #2a7fd4;
+    --transparent-color: #555;
 }
 
 /* Light Blue Theme */
 html[data-theme="light-blue"] {
-    --primary-green: #007caf;
-    --dark-green-1: #33a0c6;
-    --dark-green-2: #1a90bd;
-    --dark-green-deep: #00638c;
-    --coral-peach: #42b2df;
-    --coral-hover: #3aa0c9;
+    --primary-green: #0d8fc2;
+    --dark-green-1: #2da8d6;
+    --dark-green-2: #1a9ccc;
+    --dark-green-deep: #0a78a8;
+    --coral-peach: #3dc0e8;
+    --coral-hover: #30aed4;
     --mint-light: #99d9ef;
     --mint-subtext: #d9f1f9;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #007caf;
-    --accent-color: #42b2df;
+    --primary-color: #0d8fc2;
+    --accent-color: #3dc0e8;
+    --transparent-color: #555;
 }
 
 /* French Slate Theme */
 html[data-theme="french-slate"] {
-    --primary-green: #353f4b;
-    --dark-green-1: #5f6a77;
-    --dark-green-2: #4f5963;
-    --dark-green-deep: #2a323c;
-    --coral-peach: #6e7f94;
-    --coral-hover: #5f7084;
+    --primary-green: #4a5868;
+    --dark-green-1: #6a7a8a;
+    --dark-green-2: #5a6878;
+    --dark-green-deep: #3a4858;
+    --coral-peach: #7a8fa4;
+    --coral-hover: #6c8094;
     --mint-light: #b7c2cd;
     --mint-subtext: #e4e8ec;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #353f4b;
-    --accent-color: #6e7f94;
+    --primary-color: #4a5868;
+    --accent-color: #7a8fa4;
+    --transparent-color: #555;
 }
 
 /* Magenta Theme */
 html[data-theme="magenta"] {
-    --primary-green: #ec008b;
-    --dark-green-1: #f033a5;
-    --dark-green-2: #ee1a99;
-    --dark-green-deep: #bd006f;
-    --coral-peach: #f75ab5;
-    --coral-hover: #e049a2;
-    --mint-light: #fbadd9;
-    --mint-subtext: #fee4f4;
+    --primary-green: #cc0e7e;
+    --dark-green-1: #e03098;
+    --dark-green-2: #d81e8c;
+    --dark-green-deep: #b00a6c;
+    --coral-peach: #f060c0;
+    --coral-hover: #dc50ae;
+    --mint-light: #f5a8dc;
+    --mint-subtext: #fde0f4;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #ec008b;
-    --accent-color: #f75ab5;
+    --primary-color: #cc0e7e;
+    --accent-color: #f060c0;
+    --transparent-color: #555;
 }
 
 /* Signal Violet Theme */
 html[data-theme="signal-violet"] {
-    --primary-green: #65365a;
-    --dark-green-1: #8a5f7c;
-    --dark-green-2: #7a4e6d;
-    --dark-green-deep: #512b48;
-    --coral-peach: #9e6090;
-    --coral-hover: #8d5681;
-    --mint-light: #ceb0c7;
-    --mint-subtext: #ede2eb;
+    --primary-green: #7a4a6e;
+    --dark-green-1: #9a6a8e;
+    --dark-green-2: #8c5c80;
+    --dark-green-deep: #68385c;
+    --coral-peach: #b48ab0;
+    --coral-hover: #a47ca0;
+    --mint-light: #d8b8d4;
+    --mint-subtext: #f0e4ee;
     --bg-soft-gray: #f5f6f7;
     --border-light: #e0e0e0;
     --text-dark: #1a1a2e;
     --text-gray: #555;
-    --primary-color: #65365a;
-    --accent-color: #9e6090;
+    --primary-color: #7a4a6e;
+    --accent-color: #b48ab0;
+    --transparent-color: #555;
 }
 
 /* ============================================
-   Toggle Button (Gear Icon)
+   Custom Color Picker - Reference Style
+   (Cybron / Colorwheel + 3 circles + picker)
    ============================================ */
 
-.cs-toggle-btn {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 46px;
-    height: 46px;
-    background: var(--primary-green);
-    color: white;
-    border: none;
-    border-radius: 8px 0 0 8px;
-    cursor: pointer;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+/* ── Root Container ───────────────────────── */
+#ccp-root {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+#ccp-root > * {
+  pointer-events: all;
 }
 
-.cs-toggle-btn:hover {
-    background: var(--dark-green-deep);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: -3px 3px 16px rgba(0, 0, 0, 0.25);
+/* ── Toggle Button ────────────────────────── */
+#ccp-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 0 16px rgba(0,0,0,0.15);
+  transition: box-shadow 0.2s;
+}
+#ccp-toggle:hover {
+  box-shadow: -4px 0 20px rgba(0,0,0,0.22);
 }
 
-.cs-toggle-btn svg,
-.cs-toggle-btn i {
-    transition: transform 0.4s ease;
+/* ── Main Panel ───────────────────────────── */
+#ccp-panel {
+  position: fixed;
+  right: -130px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  z-index: 9998;
+  padding: 18px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: right 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+#ccp-panel.visible {
+  right: 54px;
 }
 
-body.cs-panel-open .cs-toggle-btn svg,
-body.cs-panel-open .cs-toggle-btn i {
-    transform: rotate(180deg);
+/* Close button */
+#ccp-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #ff5c5c;
+  border: none;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 700;
 }
 
-/* ============================================
-   Color Switcher Panel
-   ============================================ */
-
-.cs-panel {
-    position: fixed;
-    top: 0;
-    right: -340px;
-    width: 320px;
-    height: 100vh;
-    background: white;
-    z-index: 10000;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+/* Colorwheel icon */
+#ccp-wheel-icon {
+  margin-top: 6px;
 }
 
-.cs-panel.cs-open {
-    right: 0;
+/* Label */
+#ccp-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* Panel Header */
-.cs-panel-header {
-    padding: 16px 20px;
-    background: var(--primary-green);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
+/* ── 3 Color Circles ──────────────────────── */
+#ccp-circles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
-.cs-panel-header h3 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+.ccp-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.ccp-circle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 5px 16px rgba(0,0,0,0.25);
+}
+.ccp-circle:focus {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
 }
 
-.cs-close-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.4rem;
-    cursor: pointer;
-    padding: 4px;
-    line-height: 1;
-    transition: transform 0.2s ease;
+/* Reset button */
+#ccp-reset {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.65rem;
+  color: #666;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: center;
+}
+#ccp-reset:hover {
+  background: var(--primary-green);
+  color: #fff;
+  border-color: var(--primary-green);
 }
 
-.cs-close-btn:hover {
-    transform: scale(1.1);
+/* ── Color Picker Popup ───────────────────── */
+#ccp-picker-popup {
+  position: fixed;
+  right: 180px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 16px;
+  z-index: 9997;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 220px;
+}
+#ccp-picker-popup.visible {
+  display: flex;
 }
 
-/* Panel Body */
-.cs-panel-body {
-    padding: 20px;
-    flex: 1;
+/* Gradient Box */
+#ccp-gradient-box {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+#ccp-gradient-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#ccp-gradient-cursor {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  top: 20%;
+  left: 50%;
 }
 
-.cs-panel-body p,
-.cs-panel-body label {
-    font-size: 0.75rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    font-weight: 600;
+/* Hue Slider */
+#ccp-hue-slider-wrap {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+#ccp-hue-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#ccp-hue-cursor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.4);
+  pointer-events: none;
 }
 
-/* ============================================
-   Color Swatches Grid
-   ============================================ */
-
-.cs-swatches {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 20px;
+/* Make hue horizontal */
+#ccp-hue-slider-wrap {
+  height: 16px;
+}
+#ccp-hue-canvas {
+  width: 100%;
+  height: 16px;
 }
 
-.cs-swatch {
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    height: 44px;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Hex Input Row */
+#ccp-hex-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+#ccp-hex-preview {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: #fff;
+}
+#ccp-hex-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: monospace;
+  outline: none;
+  min-width: 0;
+}
+#ccp-hex-apply {
+  background: var(--primary-green, #0c2d28);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+#ccp-hex-apply:hover {
+  opacity: 0.85;
 }
 
-.cs-swatch:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.cs-swatch.cs-active {
-    border-color: #333;
-    box-shadow: 0 0 0 2px #333;
-}
-
-.cs-swatch-primary {
-    height: 70%;
-    width: 100%;
-}
-
-.cs-swatch-accent {
-    height: 30%;
-    width: 100%;
-}
-
-.cs-swatch.cs-active::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.cs-swatch-label {
-    display: none;
-}
-
-/* ============================================
-   Reset Button
-   ============================================ */
-
-.cs-reset-btn {
-    width: 100%;
-    padding: 10px;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: #444;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.cs-reset-btn:hover {
-    background: var(--primary-green);
-    color: white;
-    border-color: var(--primary-green);
-}
-
-/* ============================================
-   Overlay/Backdrop
-   ============================================ */
-
-.cs-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.cs-overlay.cs-visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ============================================
-   Responsive Design
-   ============================================ */
-
-@media screen and (max-width: 400px) {
-    .cs-panel {
-        width: 280px;
-        right: -300px;
-    }
-    
-    .cs-swatches {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ============================================
-   Smooth Transitions for Theme Changes
-   ============================================ */
-
+/* ── Smooth transitions ───────────────────── */
 * {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Prevent transition on page load */
-.preload * {
-    transition: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

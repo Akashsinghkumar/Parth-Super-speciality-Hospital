@@ -1,269 +1,421 @@
 /**
- * Color Switcher for Parth Super Speciality Hospital
- * Allows users to switch between 16 different color themes
+ * Parth Hospital - Custom Color Picker
+ * Reference: Cybron style - colorwheel icon, 3 color pickers, live apply
  */
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    // Theme definitions
-    const THEMES = [
-        { id: 'parth-original', label: 'Parth Original', primary: '#0c2d28', accent: '#F7A582' },
-        { id: 'medicoz-blue', label: 'Medical Blue', primary: '#1370b5', accent: '#13bfb3' },
-        { id: 'teal-blue', label: 'Teal', primary: '#13bfb3', accent: '#1370b5' },
-        { id: 'scarlet-coral', label: 'Scarlet Coral', primary: '#ef5b3f', accent: '#f79783' },
-        { id: 'kelly-green', label: 'Kelly Green', primary: '#7fc540', accent: '#a7dc72' },
-        { id: 'dodger-blue', label: 'Dodger Blue', primary: '#105abf', accent: '#5493ea' },
-        { id: 'medical-red', label: 'Medical Red', primary: '#c90f40', accent: '#e85c80' },
-        { id: 'amber-gold', label: 'Amber Gold', primary: '#dab600', accent: '#f5d847' },
-        { id: 'deep-maroon', label: 'Deep Maroon', primary: '#70012c', accent: '#b53c69' },
-        { id: 'warm-brown', label: 'Warm Brown', primary: '#562424', accent: '#965858' },
-        { id: 'emerald-green', label: 'Emerald Green', primary: '#018f55', accent: '#3ec28a' },
-        { id: 'duchess-blue', label: 'Duchess Blue', primary: '#00154e', accent: '#1370b5' },
-        { id: 'light-blue', label: 'Light Blue', primary: '#007caf', accent: '#42b2df' },
-        { id: 'french-slate', label: 'French Slate', primary: '#353f4b', accent: '#6e7f94' },
-        { id: 'magenta', label: 'Magenta', primary: '#ec008b', accent: '#f75ab5' },
-        { id: 'signal-violet', label: 'Signal Violet', primary: '#65365a', accent: '#9e6090' }
-    ];
+  const STORAGE_KEY = 'parth-custom-colors';
 
-    // Constants
-    const DEFAULT_THEME = 'parth-original';
-    const STORAGE_KEY = 'parth-hospital-theme';
+  // Fixed Hospital Theme (Dark Teal - good contrast for white nav text)
+  // This is the RESET default - always comes back to this
+  const HOSPITAL_THEME = {
+    primary: '#0d8a82',   // Darker Teal (header - white text clearly visible)
+    secondary: '#1a7fc7', // Medical Blue (accent, buttons)
+    dark: '#1a2d4a'       // Deep Navy (text, dark elements)
+  };
 
-    // State
-    let container = null;
-    let toggleBtn = null;
-    let panel = null;
-    let overlay = null;
+  // DEFAULTS same as hospital theme
+  const DEFAULTS = { ...HOSPITAL_THEME };
 
-    /**
-     * Build the color switcher HTML structure
-     */
-    function buildSwitcherHTML() {
-        // Create main container
-        container = document.createElement('div');
-        container.className = 'cs-container';
+  let currentColors = { ...DEFAULTS };
+  let activePicker = null; // 'primary' | 'secondary' | 'dark'
+  let isDragging = false;
 
-        // Create overlay
-        overlay = document.createElement('div');
-        overlay.className = 'cs-overlay';
+  /* ── Load saved colors ─────────────────────────────── */
+  function loadColors() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        currentColors = { ...HOSPITAL_THEME, ...parsed };
+      } else {
+        // First load - use hospital theme
+        currentColors = { ...HOSPITAL_THEME };
+      }
+    } catch (e) {
+      currentColors = { ...HOSPITAL_THEME };
+    }
+  }
 
-        // Create toggle button with gear icon
-        toggleBtn = document.createElement('button');
-        toggleBtn.className = 'cs-toggle-btn';
-        toggleBtn.setAttribute('aria-label', 'Open color theme switcher');
-        toggleBtn.innerHTML = `
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12.88V11.12C2 10.08 2.85 9.22 3.9 9.22C5.71 9.22 6.45 7.94 5.54 6.37C5.02 5.47 5.33 4.3 6.24 3.78L7.97 2.79C8.76 2.32 9.78 2.6 10.25 3.39L10.36 3.58C11.26 5.15 12.74 5.15 13.65 3.58L13.76 3.39C14.23 2.6 15.25 2.32 16.04 2.79L17.77 3.78C18.68 4.3 18.99 5.47 18.47 6.37C17.56 7.94 18.3 9.22 20.11 9.22C21.15 9.22 22.01 10.07 22.01 11.12V12.88C22.01 13.92 21.16 14.78 20.11 14.78C18.3 14.78 17.56 16.06 18.47 17.63C18.99 18.54 18.68 19.7 17.77 20.22L16.04 21.21C15.25 21.68 14.23 21.4 13.76 20.61L13.65 20.42C12.75 18.85 11.27 18.85 10.36 20.42L10.25 20.61C9.78 21.4 8.76 21.68 7.97 21.21L6.24 20.22C5.33 19.7 5.02 18.53 5.54 17.63C6.45 16.06 5.71 14.78 3.9 14.78C2.85 14.78 2 13.92 2 12.88Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        `;
+  function saveColors() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(currentColors));
+    } catch (e) {}
+  }
 
-        // Create panel
-        panel = document.createElement('div');
-        panel.className = 'cs-panel';
+  /* ── Apply colors to CSS variables ─────────────────── */
+  function applyColors(colors) {
+    const root = document.documentElement;
+    // Core variables
+    root.style.setProperty('--primary-green', colors.primary);
+    root.style.setProperty('--primary-color', colors.primary);
+    root.style.setProperty('--coral-peach', colors.secondary);
+    root.style.setProperty('--accent-color', colors.secondary);
+    root.style.setProperty('--coral-hover', shadeColor(colors.secondary, -15));
+    root.style.setProperty('--dark-green-1', shadeColor(colors.primary, 20));
+    root.style.setProperty('--dark-green-2', shadeColor(colors.primary, 10));
+    root.style.setProperty('--dark-green-deep', shadeColor(colors.primary, -10));
+    root.style.setProperty('--text-dark', colors.dark);
+    root.style.setProperty('--light-Background', colors.dark);
 
-        // Panel header
-        const header = document.createElement('div');
-        header.className = 'cs-header';
-        
-        const title = document.createElement('h3');
-        title.textContent = 'Color Themes';
-        
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'cs-close-btn';
-        closeBtn.setAttribute('aria-label', 'Close color theme switcher');
-        closeBtn.innerHTML = '&times;';
-        
-        header.appendChild(title);
-        header.appendChild(closeBtn);
+    // Force override header (has !important in CSS) - SKIP: header is fixed
+    // Header is intentionally fixed to match footer - do not change with color picker
+  }
 
-        // Panel body
-        const body = document.createElement('div');
-        body.className = 'cs-body';
-        
-        const label = document.createElement('p');
-        label.className = 'cs-label';
-        label.textContent = 'Choose a Theme';
-        
-        const swatches = document.createElement('div');
-        swatches.className = 'cs-swatches';
+  /* ── Shade a hex color ──────────────────────────────── */
+  function shadeColor(hex, percent) {
+    const num = parseInt(hex.replace('#', ''), 16);
+    const r = Math.min(255, Math.max(0, (num >> 16) + percent * 2.55));
+    const g = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + percent * 2.55));
+    const b = Math.min(255, Math.max(0, (num & 0xff) + percent * 2.55));
+    return '#' + [r, g, b].map(v => Math.round(v).toString(16).padStart(2, '0')).join('');
+  }
 
-        // Create swatches for each theme
-        THEMES.forEach(theme => {
-            const swatch = document.createElement('div');
-            swatch.className = 'cs-swatch';
-            swatch.setAttribute('data-theme', theme.id);
-            swatch.setAttribute('title', theme.label);
-            swatch.setAttribute('role', 'button');
-            swatch.setAttribute('tabindex', '0');
-            swatch.setAttribute('aria-label', theme.label + ' theme');
+  /* ── HSV <-> RGB conversions ────────────────────────── */
+  function hsvToRgb(h, s, v) {
+    h = h / 360;
+    let r, g, b;
+    const i = Math.floor(h * 6);
+    const f = h * 6 - i;
+    const p = v * (1 - s);
+    const q = v * (1 - f * s);
+    const t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+      case 0: r = v; g = t; b = p; break;
+      case 1: r = q; g = v; b = p; break;
+      case 2: r = p; g = v; b = t; break;
+      case 3: r = p; g = q; b = v; break;
+      case 4: r = t; g = p; b = v; break;
+      case 5: r = v; g = p; b = q; break;
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  }
 
-            const primaryDiv = document.createElement('div');
-            primaryDiv.className = 'cs-swatch-primary';
-            primaryDiv.style.backgroundColor = theme.primary;
+  function rgbToHsv(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    const diff = max - min;
+    let h = 0, s = 0, v = max;
+    if (diff !== 0) {
+      s = diff / max;
+      if (max === r) h = ((g - b) / diff) % 6;
+      else if (max === g) h = (b - r) / diff + 2;
+      else h = (r - g) / diff + 4;
+      h = Math.round(h * 60);
+      if (h < 0) h += 360;
+    }
+    return [h, s, v];
+  }
 
-            const accentDiv = document.createElement('div');
-            accentDiv.className = 'cs-swatch-accent';
-            accentDiv.style.backgroundColor = theme.accent;
+  function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)] : [0, 0, 0];
+  }
 
-            swatch.appendChild(primaryDiv);
-            swatch.appendChild(accentDiv);
-            swatches.appendChild(swatch);
-        });
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+  }
 
-        body.appendChild(label);
-        body.appendChild(swatches);
+  /* ── Build full UI ──────────────────────────────────── */
+  function buildUI() {
+    const root = document.createElement('div');
+    root.id = 'ccp-root';
+    root.innerHTML = `
+      <!-- Toggle Button -->
+      <button id="ccp-toggle" aria-label="Open color picker">
+        <svg width="26" height="26" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="20" r="12" fill="#e74c3c"/>
+          <circle cx="75" cy="38" r="12" fill="#e67e22"/>
+          <circle cx="80" cy="65" r="12" fill="#f1c40f"/>
+          <circle cx="62" cy="84" r="12" fill="#2ecc71"/>
+          <circle cx="38" cy="84" r="12" fill="#1abc9c"/>
+          <circle cx="20" cy="65" r="12" fill="#3498db"/>
+          <circle cx="25" cy="38" r="12" fill="#9b59b6"/>
+          <circle cx="50" cy="50" r="10" fill="#fff"/>
+        </svg>
+      </button>
 
-        // Reset button
-        const resetBtn = document.createElement('button');
-        resetBtn.className = 'cs-reset-btn';
-        resetBtn.textContent = 'Reset to Default (Parth Original)';
-        body.appendChild(resetBtn);
+      <!-- Panel -->
+      <div id="ccp-panel">
+        <button id="ccp-close" aria-label="Close">✕</button>
+        <div id="ccp-wheel-icon">
+          <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="20" r="12" fill="#e74c3c"/>
+            <circle cx="75" cy="38" r="12" fill="#e67e22"/>
+            <circle cx="80" cy="65" r="12" fill="#f1c40f"/>
+            <circle cx="62" cy="84" r="12" fill="#2ecc71"/>
+            <circle cx="38" cy="84" r="12" fill="#1abc9c"/>
+            <circle cx="20" cy="65" r="12" fill="#3498db"/>
+            <circle cx="25" cy="38" r="12" fill="#9b59b6"/>
+            <circle cx="50" cy="50" r="10" fill="#fff"/>
+          </svg>
+        </div>
+        <p id="ccp-label">Try your<br>colors</p>
 
-        // Assemble panel
-        panel.appendChild(header);
-        panel.appendChild(body);
+        <div id="ccp-circles">
+          <button class="ccp-circle" data-key="primary" title="Primary Color (Header)" style="background:${currentColors.primary}"></button>
+          <button class="ccp-circle" data-key="secondary" title="Accent Color (Buttons)" style="background:${currentColors.secondary}"></button>
+          <button class="ccp-circle" data-key="dark" title="Dark Color (Text)" style="background:${currentColors.dark}"></button>
+        </div>
 
-        // Assemble container
-        container.appendChild(overlay);
-        container.appendChild(toggleBtn);
-        container.appendChild(panel);
+        <button id="ccp-reset">↺ Hospital Theme</button>
+      </div>
 
-        // Add to body
-        document.body.appendChild(container);
+      <!-- Color Picker Popup -->
+      <div id="ccp-picker-popup">
+        <div id="ccp-gradient-box">
+          <canvas id="ccp-gradient-canvas"></canvas>
+          <div id="ccp-gradient-cursor"></div>
+        </div>
+        <div id="ccp-hue-slider-wrap">
+          <canvas id="ccp-hue-canvas"></canvas>
+          <div id="ccp-hue-cursor"></div>
+        </div>
+        <div id="ccp-hex-row">
+          <span id="ccp-hex-preview"></span>
+          <input id="ccp-hex-input" type="text" maxlength="7" placeholder="#000000"/>
+          <button id="ccp-hex-apply">Apply</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(root);
+  }
+
+  /* ── Picker state ───────────────────────────────────── */
+  let pickerHue = 180;
+  let pickerSat = 0.5;
+  let pickerVal = 0.8;
+
+  function renderGradient() {
+    const canvas = document.getElementById('ccp-gradient-canvas');
+    if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 188;
+    canvas.height = canvas.offsetHeight || 160;
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width, h = canvas.height;
+
+    // Base hue color
+    const [r, g, b] = hsvToRgb(pickerHue, 1, 1);
+    const baseColor = `rgb(${r},${g},${b})`;
+
+    // White → hue gradient (left to right)
+    const gradH = ctx.createLinearGradient(0, 0, w, 0);
+    gradH.addColorStop(0, '#fff');
+    gradH.addColorStop(1, baseColor);
+    ctx.fillStyle = gradH;
+    ctx.fillRect(0, 0, w, h);
+
+    // Transparent → black gradient (top to bottom)
+    const gradV = ctx.createLinearGradient(0, 0, 0, h);
+    gradV.addColorStop(0, 'rgba(0,0,0,0)');
+    gradV.addColorStop(1, 'rgba(0,0,0,1)');
+    ctx.fillStyle = gradV;
+    ctx.fillRect(0, 0, w, h);
+
+    updateGradientCursor();
+    updateHexPreview();
+  }
+
+  function renderHue() {
+    const canvas = document.getElementById('ccp-hue-canvas');
+    if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 188;
+    canvas.height = 16;
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const grad = ctx.createLinearGradient(0, 0, w, 0);
+    [0, 60, 120, 180, 240, 300, 360].forEach(s => {
+      const [r, g, b] = hsvToRgb(s, 1, 1);
+      grad.addColorStop(s / 360, `rgb(${r},${g},${b})`);
+    });
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, 16);
+    updateHueCursor();
+  }
+
+  function updateGradientCursor() {
+    const canvas = document.getElementById('ccp-gradient-canvas');
+    const cursor = document.getElementById('ccp-gradient-cursor');
+    if (!canvas || !cursor) return;
+    const x = pickerSat * canvas.width;
+    const y = (1 - pickerVal) * canvas.height;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+  }
+
+  function updateHueCursor() {
+    const canvas = document.getElementById('ccp-hue-canvas');
+    const cursor = document.getElementById('ccp-hue-cursor');
+    if (!canvas || !cursor) return;
+    cursor.style.left = (pickerHue / 360) * (canvas.width || 188) + 'px';
+    cursor.style.top = '50%';
+  }
+
+  function updateHexPreview() {
+    const [r, g, b] = hsvToRgb(pickerHue, pickerSat, pickerVal);
+    const hex = rgbToHex(r, g, b);
+    const preview = document.getElementById('ccp-hex-preview');
+    const input = document.getElementById('ccp-hex-input');
+    if (preview) preview.style.background = hex;
+    if (input) input.value = hex;
+    return hex;
+  }
+
+  function getCurrentPickerHex() {
+    const [r, g, b] = hsvToRgb(pickerHue, pickerSat, pickerVal);
+    return rgbToHex(r, g, b);
+  }
+
+  function setPickerFromHex(hex) {
+    const [r, g, b] = hexToRgb(hex);
+    const [h, s, v] = rgbToHsv(r, g, b);
+    pickerHue = h;
+    pickerSat = s;
+    pickerVal = v;
+  }
+
+  function openPicker(key) {
+    activePicker = key;
+    setPickerFromHex(currentColors[key]);
+
+    const popup = document.getElementById('ccp-picker-popup');
+    popup.classList.add('visible');
+
+    setTimeout(() => {
+      renderGradient();
+      renderHue();
+    }, 10);
+  }
+
+  function closePicker() {
+    const popup = document.getElementById('ccp-picker-popup');
+    popup.classList.remove('visible');
+    activePicker = null;
+  }
+
+  function applyPickerColor() {
+    if (!activePicker) return;
+    const hex = getCurrentPickerHex();
+    currentColors[activePicker] = hex;
+
+    // Update circle
+    const circle = document.querySelector(`.ccp-circle[data-key="${activePicker}"]`);
+    if (circle) circle.style.background = hex;
+
+    applyColors(currentColors);
+    saveColors();
+  }
+
+  /* ── Bind gradient canvas events ───────────────────── */
+  function bindGradientEvents() {
+    const canvas = document.getElementById('ccp-gradient-canvas');
+    if (!canvas) return;
+
+    function pickFromGradient(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      pickerSat = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      pickerVal = Math.min(1, Math.max(0, 1 - (clientY - rect.top) / rect.height));
+      renderGradient();
+      applyPickerColor();
     }
 
-    /**
-     * Apply a theme
-     * @param {string} themeId - The theme ID to apply
-     * @param {boolean} save - Whether to save to localStorage
-     */
-    function applyTheme(themeId, save) {
-        const theme = THEMES.find(t => t.id === themeId);
-        if (!theme) {
-            console.warn('Theme not found:', themeId);
-            return;
-        }
+    canvas.addEventListener('mousedown', e => { isDragging = true; pickFromGradient(e); });
+    canvas.addEventListener('touchstart', e => { isDragging = true; pickFromGradient(e); }, { passive: true });
+    document.addEventListener('mousemove', e => { if (isDragging && activePicker) pickFromGradient(e); });
+    document.addEventListener('touchmove', e => { if (isDragging && activePicker) pickFromGradient(e); }, { passive: true });
+    document.addEventListener('mouseup', () => { isDragging = false; });
+    document.addEventListener('touchend', () => { isDragging = false; });
+  }
 
-        // Set data attribute on root element
-        document.documentElement.setAttribute('data-theme', themeId);
+  /* ── Bind hue slider events ─────────────────────────── */
+  function bindHueEvents() {
+    const canvas = document.getElementById('ccp-hue-canvas');
+    if (!canvas) return;
 
-        // Save to localStorage if requested
-        if (save) {
-            localStorage.setItem(STORAGE_KEY, themeId);
-        }
-
-        // Update toggle button color
-        if (toggleBtn) {
-            toggleBtn.style.backgroundColor = theme.primary;
-        }
-
-        // Update active swatch
-        const swatches = document.querySelectorAll('.cs-swatch');
-        swatches.forEach(swatch => {
-            if (swatch.getAttribute('data-theme') === themeId) {
-                swatch.classList.add('cs-active');
-            } else {
-                swatch.classList.remove('cs-active');
-            }
-        });
+    function pickHue(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      pickerHue = Math.min(360, Math.max(0, ((clientX - rect.left) / rect.width) * 360));
+      renderGradient();
+      renderHue();
+      applyPickerColor();
     }
 
-    /**
-     * Open the color switcher panel
-     */
-    function openPanel() {
-        if (panel) {
-            panel.classList.add('cs-open');
+    canvas.addEventListener('mousedown', e => { isDragging = true; pickHue(e); });
+    canvas.addEventListener('touchstart', e => { isDragging = true; pickHue(e); }, { passive: true });
+    document.addEventListener('mousemove', e => { if (isDragging) pickHue(e); });
+    document.addEventListener('touchmove', e => { if (isDragging) pickHue(e); }, { passive: true });
+  }
+
+  /* ── Init ───────────────────────────────────────────── */
+  function init() {
+    loadColors();
+    buildUI();
+    applyColors(currentColors);
+
+    // Toggle panel
+    document.getElementById('ccp-toggle').addEventListener('click', () => {
+      document.getElementById('ccp-panel').classList.toggle('visible');
+      closePicker();
+    });
+
+    // Close panel
+    document.getElementById('ccp-close').addEventListener('click', () => {
+      document.getElementById('ccp-panel').classList.remove('visible');
+      closePicker();
+    });
+
+    // Circle click → open picker
+    document.querySelectorAll('.ccp-circle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-key');
+        if (activePicker === key && document.getElementById('ccp-picker-popup').classList.contains('visible')) {
+          closePicker();
+        } else {
+          openPicker(key);
         }
-        if (overlay) {
-            overlay.classList.add('cs-visible');
-        }
-        document.body.classList.add('cs-panel-open');
-    }
+      });
+    });
 
-    /**
-     * Close the color switcher panel
-     */
-    function closePanel() {
-        if (panel) {
-            panel.classList.remove('cs-open');
-        }
-        if (overlay) {
-            overlay.classList.remove('cs-visible');
-        }
-        document.body.classList.remove('cs-panel-open');
-    }
+    // Hex input apply
+    document.getElementById('ccp-hex-apply').addEventListener('click', () => {
+      const val = document.getElementById('ccp-hex-input').value.trim();
+      if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+        setPickerFromHex(val);
+        renderGradient();
+        renderHue();
+        applyPickerColor();
+      }
+    });
 
-    /**
-     * Initialize the color switcher
-     */
-    function init() {
-        // Build the HTML
-        buildSwitcherHTML();
+    document.getElementById('ccp-hex-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('ccp-hex-apply').click();
+    });
 
-        // Load saved theme or default
-        const savedTheme = localStorage.getItem(STORAGE_KEY) || DEFAULT_THEME;
-        applyTheme(savedTheme, false);
+    // Reset → always goes back to Hospital Theme (Light Blue)
+    document.getElementById('ccp-reset').addEventListener('click', () => {
+      currentColors = { ...HOSPITAL_THEME };
+      applyColors(currentColors);
+      saveColors();
+      document.querySelectorAll('.ccp-circle').forEach(btn => {
+        btn.style.background = currentColors[btn.getAttribute('data-key')];
+      });
+      closePicker();
+    });
 
-        // Bind toggle button
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', openPanel);
-        }
+    // Bind canvas events after DOM ready
+    setTimeout(() => {
+      bindGradientEvents();
+      bindHueEvents();
+    }, 100);
+  }
 
-        // Bind close button
-        const closeBtn = document.querySelector('.cs-close-btn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closePanel);
-        }
-
-        // Bind overlay
-        if (overlay) {
-            overlay.addEventListener('click', closePanel);
-        }
-
-        // Bind swatches
-        const swatches = document.querySelectorAll('.cs-swatch');
-        swatches.forEach(swatch => {
-            // Click event
-            swatch.addEventListener('click', function() {
-                const themeId = this.getAttribute('data-theme');
-                applyTheme(themeId, true);
-                closePanel();
-            });
-
-            // Keyboard event (Enter or Space)
-            swatch.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    const themeId = this.getAttribute('data-theme');
-                    applyTheme(themeId, true);
-                    closePanel();
-                }
-            });
-        });
-
-        // Bind reset button
-        const resetBtn = document.querySelector('.cs-reset-btn');
-        if (resetBtn) {
-            resetBtn.addEventListener('click', function() {
-                applyTheme(DEFAULT_THEME, true);
-            });
-        }
-
-        // Bind escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePanel();
-            }
-        });
-    }
-
-    // Initialize on DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

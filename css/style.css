@@ -379,7 +379,8 @@ button, input, select, textarea {
 }
 
 .parth-header,
-.site-header {
+.site-header,
+header.main-header {
   position: sticky;
   top: 0;
   width: 100%;
@@ -388,7 +389,7 @@ button, input, select, textarea {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.scrolled,
@@ -573,9 +574,14 @@ button, input, select, textarea {
 
 .parth-hero {
   position: relative;
-  background: linear-gradient(135deg, #e8faf9 0%, #f0fdfc 50%, #ffffff 100%);
-  padding: 80px 0 100px 0;
+  background: #e8f6fd;
+  padding: 0;
   overflow: hidden;
+  min-height: 600px;
+  height: calc(100vh - 70px);
+  max-height: 750px;
+  display: flex;
+  align-items: center;
 }
 
 .parth-hero::before {
@@ -584,6 +590,81 @@ button, input, select, textarea {
   inset: 0;
   background: transparent;
   z-index: 0;
+}
+
+/* Full width background doctor image */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-doctor {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 88% center;
+  display: block;
+}
+
+/* Light blue gradient overlay - left side clear, right side fades */
+.hero-left-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(232, 246, 253, 0.97) 0%,
+    rgba(232, 246, 253, 0.95) 30%,
+    rgba(232, 246, 253, 0.80) 50%,
+    rgba(232, 246, 253, 0.30) 70%,
+    rgba(232, 246, 253, 0.0) 100%
+  );
+}
+
+/* Medical cross decorative icons */
+.hero-cross {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-cross-1 { top: 40px; left: 40px; }
+.hero-cross-2 { top: 140px; left: 80px; }
+.hero-cross-3 { top: 80px; left: 130px; }
+
+/* Wave shape bottom left */
+.hero-wave-shape {
+  position: absolute;
+  bottom: -40px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(32, 201, 190, 0.12) 0%, transparent 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Container above overlays */
+.hero-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 500px;
+  padding: 80px 0;
+}
+
+.hero-right-spacer {
+  /* Empty spacer for right side - doctor shows through background */
 }
 
 /* Dot grid patterns matching Parth screenshot */
@@ -668,7 +749,7 @@ button, input, select, textarea {
 .hero-content {
   padding-right: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .hero-tag {
@@ -684,7 +765,7 @@ button, input, select, textarea {
   font-family: var(--font-heading);
   font-size: 3.5rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: #1a2d4a;
   line-height: 1.18;
   margin-bottom: 22px;
   letter-spacing: -0.6px;
@@ -692,7 +773,7 @@ button, input, select, textarea {
 
 .hero-desc {
   font-size: 1.02rem;
-  color: var(--text-gray);
+  color: #3a5a70;
   line-height: 1.75;
   max-width: 500px;
   margin-bottom: 34px;
@@ -703,6 +784,15 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.parth-hero .btn-video-watch {
+  color: #1a2d4a;
+}
+
+.parth-hero .video-play-ring {
+  border-color: #1a2d4a;
+  color: #1a2d4a;
 }
 
 .hero-images-wrap {
@@ -856,6 +946,34 @@ button, input, select, textarea {
   }
 }
 
+/* Mobile hero - full overlay on small screens */
+@media (max-width: 768px) {
+  .parth-hero {
+    min-height: 420px;
+    height: auto;
+    max-height: none;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 60px 0;
+    min-height: 380px;
+  }
+  .hero-left-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(232, 246, 253, 0.98) 0%,
+      rgba(232, 246, 253, 0.95) 60%,
+      rgba(232, 246, 253, 0.85) 100%
+    );
+  }
+  .hero-right-spacer { display: none; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-cross-1 { top: 20px; left: 20px; }
+  .hero-cross-2 { top: 80px; left: 50px; }
+  .hero-cross-3 { display: none; }
+  .hero-bg-doctor { object-position: 70% center; }
+}
+
 .hero-pill-img {
   width: 100%;
   height: 100%;
@@ -890,6 +1008,37 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Single door - top to bottom */
+.strip-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 0;
+  transform: translateY(-100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.strip-card::after {
+  display: none;
+}
+
+.strip-card:hover::before {
+  transform: translateY(0);
+}
+
+/* Keep all content above shutter */
+.strip-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .strip-coral {
@@ -3750,10 +3899,30 @@ button, input, select, textarea {
 
 @media (max-width: 900px) {
   .parth-hero {
-    padding: 0;
-    min-height: 620px;
-    display: flex;
-    align-items: center;
+    min-height: 700px;
+    height: auto;
+    max-height: none;
+    align-items: flex-start;
+  }
+
+  .hero-bg-img {
+    top: auto;
+    bottom: 0;
+    height: 290px;
+  }
+
+  .hero-bg-doctor {
+    object-position: 100% center;
+  }
+
+  .hero-left-overlay {
+    display: none;
+  }
+
+  .hero-grid::before,
+  .hero-grid::after {
+    content: none;
+    display: none;
   }
 
   .hero-container {
@@ -3761,53 +3930,28 @@ button, input, select, textarea {
   }
 
   .hero-grid {
-    min-height: 620px;
+    min-height: 0;
     grid-template-columns: minmax(0, 1fr);
-    align-items: center;
+    align-items: start;
     text-align: left;
     gap: 0;
-    padding: 48px 0;
-  }
-
-  .hero-grid::before,
-  .hero-grid::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-
-  .hero-grid::before {
-    left: 18%;
-    background: url("../assets/gallery/gallery01.png") 58% center / cover no-repeat;
-    opacity: 0.92;
-  }
-
-  .hero-grid::after {
-    background: linear-gradient(
-      90deg,
-      #07332F 0%,
-      rgba(7, 51, 47, 0.97) 32%,
-      rgba(7, 51, 47, 0.78) 58%,
-      rgba(7, 51, 47, 0.28) 100%
-    );
+    padding: 40px 0 310px;
   }
 
   .hero-content {
     width: 100%;
     padding: 0;
     text-align: left;
-    z-index: 2;
   }
 
   .hero-title {
-    max-width: 78%;
-    font-size: clamp(2rem, 6vw, 3rem);
+    max-width: 82%;
+    font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.16;
   }
 
   .hero-desc {
-    max-width: 75%;
+    max-width: 82%;
     margin: 0 0 26px;
   }
 
@@ -3817,15 +3961,15 @@ button, input, select, textarea {
     gap: 12px;
   }
 
+  .hero-right-spacer,
   .hero-images-wrap {
     display: none;
   }
 }
 
 @media (max-width: 600px) {
-  .parth-hero,
-  .hero-grid {
-    min-height: 590px;
+  .parth-hero {
+    min-height: 690px;
   }
 
   .hero-container {
@@ -3833,46 +3977,35 @@ button, input, select, textarea {
     padding-left: 18px;
   }
 
+  .hero-bg-img {
+    height: 260px;
+  }
+
   .hero-grid {
-    padding: 42px 0;
-  }
-
-  .hero-grid::before {
-    left: 8%;
-    background-position: 58% center;
-  }
-
-  .hero-grid::after {
-    background: linear-gradient(
-      90deg,
-      #07332F 0%,
-      rgba(7, 51, 47, 0.96) 38%,
-      rgba(7, 51, 47, 0.78) 65%,
-      rgba(7, 51, 47, 0.36) 100%
-    );
+    padding: 34px 0 280px;
   }
 
   .hero-tag {
-    max-width: 76%;
+    max-width: 100%;
     font-size: 0.68rem;
     letter-spacing: 1.4px;
   }
 
   .hero-title {
-    max-width: 82%;
+    max-width: 100%;
     font-size: clamp(1.8rem, 8vw, 2.35rem);
     margin-bottom: 16px;
   }
 
   .hero-desc {
-    max-width: 82%;
+    max-width: 100%;
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 22px;
   }
 
   .hero-btn-group {
-    max-width: 82%;
+    max-width: 100%;
     align-items: flex-start;
   }
 

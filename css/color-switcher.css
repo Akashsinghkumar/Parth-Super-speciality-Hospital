@@ -1197,3 +1197,82 @@ html[data-theme="signal-violet"] {
     color: rgba(255, 255, 255, 0.94) !important;
 }
 
+/* =========================================================
+   MOBILE SCROLL-TRIGGERED SHUTTER ANIMATION
+   Opens/closes shutter smoothly as user scrolls up & down
+   ========================================================= */
+@media (max-width: 991px), (hover: none) {
+  :is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+  ).mobile-shutter-active::before,
+  :is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+  ).mobile-shutter-active::after {
+    width: 52% !important;
+  }
+
+  :is(
+    .btn-coral-pill,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+  ).mobile-shutter-active {
+    color: var(--btn-shutter-text, #ffffff) !important;
+    border-color: var(--btn-shutter-bg, #0284C7) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px var(--btn-shutter-shadow, rgba(2, 132, 199, 0.45)) !important;
+  }
+
+  .btn-appointment-nav.mobile-shutter-active {
+    color: #ffffff !important;
+    border-color: var(--btn-nav-shutter, #07332F) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(7, 51, 47, 0.45) !important;
+  }
+
+  .subscribe-btn.mobile-shutter-active {
+    color: #ffffff !important;
+    border-color: #38BDF8 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(2, 132, 199, 0.5) !important;
+  }
+
+  .btn-default.mobile-shutter-active,
+  .btn-peach-outline.mobile-shutter-active {
+    color: var(--btn-outline-hover-text, #ffffff) !important;
+    border-color: var(--btn-outline-shutter, #0A6B64) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(10, 107, 100, 0.3) !important;
+  }
+}
+
+

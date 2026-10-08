@@ -704,4 +704,62 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     document.body.appendChild(floatWrap);
   }
+
+  // ── Auto-wrap raw text inside buttons in spans for perfect z-index layering ──
+  document.querySelectorAll(
+    '.btn-coral-pill, .btn-peach-outline, .btn-appointment-nav, .btn-strip-appointment, ' +
+    '.btn-cta-appointment, .btn-send-pill, .subscribe-btn, .apt-submit-btn, ' +
+    '.btn-submit-appointment, .dept-cta-btn, .doc-book-btn, .btn-default, .appointment-btn'
+  ).forEach(btn => {
+    btn.childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        const span = document.createElement('span');
+        span.textContent = node.textContent;
+        node.replaceWith(span);
+      }
+    });
+  });
+
+  // ── Mobile Scroll-Triggered Button Shutter Animation ──────────────────────
+  let mobileShutterObserver = null;
+  function initMobileShutterObserver() {
+    const isMobile = window.innerWidth <= 991 || ('ontouchstart' in window);
+    if (!isMobile) {
+      if (mobileShutterObserver) {
+        mobileShutterObserver.disconnect();
+        mobileShutterObserver = null;
+      }
+      return;
+    }
+
+    const shutterButtons = document.querySelectorAll(
+      '.btn-coral-pill, .btn-peach-outline, .btn-appointment-nav, .btn-strip-appointment, ' +
+      '.btn-cta-appointment, .btn-send-pill, .subscribe-btn, .apt-submit-btn, ' +
+      '.btn-submit-appointment, .dept-cta-btn, .doc-book-btn, .btn-default, .appointment-btn'
+    );
+
+    if (!shutterButtons.length) return;
+
+    if (mobileShutterObserver) {
+      mobileShutterObserver.disconnect();
+    }
+
+    mobileShutterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mobile-shutter-active');
+        } else {
+          entry.target.classList.remove('mobile-shutter-active');
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    shutterButtons.forEach(btn => mobileShutterObserver.observe(btn));
+  }
+
+  initMobileShutterObserver();
+  window.addEventListener('resize', initMobileShutterObserver);
 });

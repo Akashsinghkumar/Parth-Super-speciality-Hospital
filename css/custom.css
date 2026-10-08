@@ -989,42 +989,21 @@ header.main-header .header-sticky.active{
 	text-align: right;
 }
 
-.cta-btn a.appointment-btn{
-	font-size: 18px;
-    font-weight: 500;
-    border-radius: 100px;
-    color: var(--accent-color);
-	text-transform: capitalize;
-    border: 2px solid var(--accent-color);
-    padding: 12px 30px;
-    transition: all 0.3s ease-in-out;
+.cta-btn a.appointment-btn {
+	font-size: 16px;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 28px;
 	position: relative;
 	overflow: hidden;
 	display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
-.cta-btn a.appointment-btn::after{
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 104%;
-    top: 50%;
-    left: 50%;
-    background: var(--secondry-color);
-    opacity: 0;
-    z-index: -1;
-    transform: translateX(-51%) translateY(-51%);
-    transition: all 0.4s ease-out;
-    border-radius: 5px;
-}
-
-.cta-btn a.appointment-btn:hover::after{
-    width: 106%;
-    opacity: 1;
-}
-
-.cta-btn a i{
-	margin-left: 10px;
+.cta-btn a i {
+	margin-left: 6px;
 }
 
 /* How We Work Css */

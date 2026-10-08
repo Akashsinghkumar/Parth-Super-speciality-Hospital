@@ -47,12 +47,21 @@
   /* ── Apply colors to CSS variables ─────────────────── */
   function applyColors(colors) {
     const root = document.documentElement;
+    const [red, green, blue] = hexToRgb(colors.secondary).map(channel => {
+      const normalized = channel / 255;
+      return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+    });
+    const buttonTextColor = (0.2126 * red + 0.7152 * green + 0.0722 * blue) > 0.45 ? '#07332F' : '#FFFFFF';
+
     // Core variables
     root.style.setProperty('--primary-green', colors.primary);
     root.style.setProperty('--primary-color', colors.primary);
     root.style.setProperty('--coral-peach', colors.secondary);
     root.style.setProperty('--accent-color', colors.secondary);
     root.style.setProperty('--coral-hover', shadeColor(colors.secondary, -15));
+    root.style.setProperty('--button-accent', colors.secondary);
+    root.style.setProperty('--button-accent-hover', shadeColor(colors.secondary, -15));
+    root.style.setProperty('--button-accent-text', buttonTextColor);
     root.style.setProperty('--dark-green-1', shadeColor(colors.primary, 20));
     root.style.setProperty('--dark-green-2', shadeColor(colors.primary, 10));
     root.style.setProperty('--dark-green-deep', shadeColor(colors.primary, -10));

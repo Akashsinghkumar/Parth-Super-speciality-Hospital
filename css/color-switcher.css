@@ -22,6 +22,30 @@ html[data-theme="parth-original"] {
     --transparent-color: #555;
 }
 
+:root {
+    --button-accent: var(--coral-peach);
+    --button-accent-hover: var(--coral-hover);
+    --button-accent-text: #FFFFFF;
+
+    /* Medical Button Color Palette */
+    --btn-primary-bg: #0A6B64;         /* Deep Medical Pine / Teal */
+    --btn-primary-border: #0A6B64;
+    --btn-primary-text: #FFFFFF;
+    --btn-shutter-bg: #0284C7;         /* Vibrant Medical Cyan / Ocean Blue */
+    --btn-shutter-text: #FFFFFF;
+    --btn-shutter-shadow: rgba(2, 132, 199, 0.45);
+
+    --btn-nav-bg: #0284C7;             /* Medical Blue for Navbar Appointment */
+    --btn-nav-border: #0284C7;
+    --btn-nav-text: #FFFFFF;
+    --btn-nav-shutter: #07332F;        /* Deep Hospital Teal for Navbar Shutter */
+
+    --btn-outline-border: #0A6B64;
+    --btn-outline-text: #0A6B64;
+    --btn-outline-shutter: #0A6B64;
+    --btn-outline-hover-text: #FFFFFF;
+}
+
 /* Medicoz Blue Theme */
 html[data-theme="medicoz-blue"] {
     --primary-green: #1a7fc7;
@@ -96,6 +120,390 @@ html[data-theme="kelly-green"] {
     --primary-color: #6aad2e;
     --accent-color: #9fd95c;
     --transparent-color: #555;
+}
+
+/* =========================================================
+   MEDICAL BUTTONS & DUAL-SHUTTER ANIMATION (Global Across All Pages)
+   ========================================================= */
+
+/* 1. Base Setup for All Primary Medical Action Buttons */
+.btn-coral-pill,
+.btn-strip-appointment,
+.btn-cta-appointment,
+.btn-send-pill,
+.apt-submit-btn,
+.btn-submit-appointment,
+.dept-cta-btn,
+.doc-book-btn,
+.appointment-btn {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    background-color: var(--btn-primary-bg, #0A6B64) !important;
+    color: var(--btn-primary-text, #ffffff) !important;
+    border: 2px solid var(--btn-primary-border, #0A6B64) !important;
+    border-radius: 50px !important;
+    transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(10, 107, 100, 0.28) !important;
+}
+
+/* 2. Special Navbar Book Appointment Button (Contrasting in Deep Teal Header) */
+.btn-appointment-nav {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    background-color: var(--btn-nav-bg, #0284C7) !important;
+    color: var(--btn-nav-text, #ffffff) !important;
+    border: 2px solid var(--btn-nav-border, #0284C7) !important;
+    border-radius: 50px !important;
+    padding: 8px 18px !important;
+    font-weight: 700 !important;
+    transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* 3. Secondary / Card / Read More Outline Buttons */
+.btn-default,
+.btn-peach-outline {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    background-color: transparent !important;
+    color: var(--btn-outline-text, #0A6B64) !important;
+    border: 2px solid var(--btn-outline-border, #0A6B64) !important;
+    border-radius: 50px !important;
+    padding: 9px 24px !important;
+    font-weight: 700 !important;
+    transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
+/* 4. Footer Newsletter Send Button (White Text & Transparent Shutter) */
+.subscribe-btn {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    background-color: var(--btn-shutter-bg, #0284C7) !important;
+    color: #FFFFFF !important;
+    border: 2px solid var(--btn-shutter-bg, #0284C7) !important;
+    border-radius: 50px !important;
+    padding: 8px 24px !important;
+    font-weight: 800 !important;
+    font-size: 0.92rem !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4) !important;
+    transition: color 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease !important;
+    white-space: nowrap !important;
+}
+
+/* Keep all inner elements above the shutter */
+.btn-coral-pill > *,
+.btn-appointment-nav > *,
+.btn-strip-appointment > *,
+.btn-cta-appointment > *,
+.btn-send-pill > *,
+.subscribe-btn > *,
+.apt-submit-btn > *,
+.btn-submit-appointment > *,
+.dept-cta-btn > *,
+.doc-book-btn > *,
+.btn-default > *,
+.btn-peach-outline > *,
+.appointment-btn > * {
+    position: relative !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* 5. Dual Shutter Panels for Action Buttons */
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+)::before,
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+)::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 100% !important;
+    transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* For outline buttons with raw text, place shutter at z-index: -1 so raw text is always visible */
+.btn-default::before,
+.btn-default::after,
+.btn-peach-outline::before,
+.btn-peach-outline::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 0 !important;
+    height: 100% !important;
+    transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* Left panel comes from left */
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+)::before {
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* Right panel comes from right */
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+)::after {
+    right: 0 !important;
+    left: auto !important;
+}
+
+/* 6. Distinct Shutter Colors */
+/* Primary Buttons Shutter -> Vibrant Medical Cyan / Ocean Blue */
+:is(
+    .btn-coral-pill,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+)::before,
+:is(
+    .btn-coral-pill,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+)::after {
+    background-color: var(--btn-shutter-bg, #0284C7) !important;
+}
+
+/* Navbar Button Shutter -> Deep Hospital Pine Teal */
+.btn-appointment-nav::before,
+.btn-appointment-nav::after {
+    background-color: var(--btn-nav-shutter, #07332F) !important;
+}
+
+/* Outline / Read More Buttons Shutter -> Deep Medical Teal */
+.btn-default::before,
+.btn-default::after,
+.btn-peach-outline::before,
+.btn-peach-outline::after {
+    background-color: var(--btn-outline-shutter, #0A6B64) !important;
+}
+
+/* Footer Subscribe Button Shutter -> Transparent Glass Highlight */
+.subscribe-btn::before,
+.subscribe-btn::after {
+    background-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+/* 7. On Hover: Shutters Meet in Center (width 52% each) */
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+):hover::before,
+:is(
+    .btn-coral-pill,
+    .btn-peach-outline,
+    .btn-appointment-nav,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .subscribe-btn,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .btn-default,
+    .appointment-btn
+):hover::after {
+    width: 52% !important;
+}
+
+/* 8. Hover Text & Elevation */
+:is(
+    .btn-coral-pill,
+    .btn-strip-appointment,
+    .btn-cta-appointment,
+    .btn-send-pill,
+    .apt-submit-btn,
+    .btn-submit-appointment,
+    .dept-cta-btn,
+    .doc-book-btn,
+    .appointment-btn
+):hover {
+    color: var(--btn-shutter-text, #ffffff) !important;
+    border-color: var(--btn-shutter-bg, #0284C7) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px var(--btn-shutter-shadow, rgba(2, 132, 199, 0.45)) !important;
+}
+
+.btn-appointment-nav:hover {
+    color: #ffffff !important;
+    border-color: var(--btn-nav-shutter, #07332F) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(7, 51, 47, 0.45) !important;
+}
+
+.subscribe-btn:hover {
+    color: #ffffff !important;
+    border-color: #07332F !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(7, 51, 47, 0.5) !important;
+}
+
+.btn-default:hover,
+.btn-peach-outline:hover {
+    color: var(--btn-outline-hover-text, #ffffff) !important;
+    border-color: var(--btn-outline-shutter, #0A6B64) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(10, 107, 100, 0.3) !important;
+}
+
+/* 9. TOP SERVICES Read More Link (About Page) - Text link only, NOT a button! */
+.services-btn a,
+.health-services-btn a {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    overflow: visible !important;
+    isolation: auto !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--primary-green, #0A6B64) !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+.services-btn a::before,
+.services-btn a::after,
+.health-services-btn a::before,
+.health-services-btn a::after {
+    display: none !important;
+    content: none !important;
+}
+
+.services-btn a i,
+.health-services-btn a i {
+    margin-left: 7px !important;
+    font-size: 16px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.services-item:hover .services-btn a,
+.services-btn a:hover,
+.health-services-btn a:hover {
+    color: #0284C7 !important;
+    transform: translateX(4px) !important;
+}
+
+.services-item:hover .services-btn a i,
+.services-btn a:hover i,
+.health-services-btn a:hover i {
+    transform: translateX(3px) !important;
 }
 
 /* Dodger Blue Theme */
@@ -581,3 +989,211 @@ html[data-theme="signal-violet"] {
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* =========================================================
+   GLOBAL HIGH-CONTRAST FOOTER STYLING (All Pages & Themes)
+   Prevents dull or faded text across all switcher themes
+   ========================================================= */
+.parth-footer {
+    background-color: var(--header-footer-bg, #0A6B64) !important;
+    color: rgba(255, 255, 255, 0.94) !important;
+    position: relative;
+    z-index: 10;
+}
+
+/* 1. Brand Mission / About Description */
+.footer-brand-text {
+    color: rgba(255, 255, 255, 0.94) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    margin-bottom: 22px !important;
+}
+
+/* 2. Footer Section Titles (Quick Links, Contact Details, Newsletter) */
+.footer-title {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 0.4px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 22px !important;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 40px !important;
+    height: 3px !important;
+    background: var(--btn-shutter-bg, #0284C7) !important;
+    border-radius: 3px !important;
+    box-shadow: 0 0 10px rgba(2, 132, 199, 0.6) !important;
+}
+
+/* 3. Quick Links (Home, About Us, Services, Blog, FAQs, Contact Us) */
+.footer-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.footer-nav li {
+    margin-bottom: 0 !important;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.92) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.footer-nav a:hover {
+    color: #38BDF8 !important;
+    transform: translateX(6px) !important;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
+}
+
+/* 4. Contact Details (Address, Email, Phone, Timings) */
+.footer-contact-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.footer-contact-details li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    color: rgba(255, 255, 255, 0.94) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+}
+
+.footer-contact-details li span {
+    color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.footer-contact-details li a {
+    color: rgba(255, 255, 255, 0.94) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.footer-contact-details li a:hover {
+    color: #38BDF8 !important;
+    text-decoration: underline !important;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.45) !important;
+}
+
+.contact-icon {
+    color: #38BDF8 !important;
+    font-size: 1.1rem !important;
+    flex-shrink: 0 !important;
+    margin-top: 3px !important;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.55) !important;
+}
+
+/* 5. Newsletter Description & Form */
+.footer-newsletter-text {
+    color: rgba(255, 255, 255, 0.94) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.65 !important;
+    font-weight: 400 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    margin-bottom: 18px !important;
+}
+
+.footer-subscribe-form {
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50px !important;
+    padding: 5px 6px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.subscribe-input {
+    flex: 1 !important;
+    color: #FFFFFF !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 8px 16px !important;
+}
+
+.subscribe-input::placeholder {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* 6. Social Media Icons */
+.footer-social-icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.footer-social-icons a {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.footer-social-icons a:hover {
+    background: #0284C7 !important;
+    border-color: #0284C7 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
+}
+
+/* 7. Copyright Bar */
+.footer-copyright-bar {
+    background: rgba(0, 0, 0, 0.22) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 22px 0 !important;
+    text-align: center !important;
+}
+
+.copyright-container,
+.footer-copyright-bar p,
+.footer-copyright-bar span {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+}
+
+/* 8. Extra Dark-Background Content (Quick strip card & CTA banner) */
+.strip-card-desc,
+.cta-desc {
+    color: rgba(255, 255, 255, 0.94) !important;
+}
+

@@ -1,6 +1,7 @@
 
 
 :root {
+  --header-footer-bg: #0a6b64;
   --dept-primary: #07332F;
   --dept-accent: #F7A582;
   --dept-light-accent: #FEEFE9;
@@ -709,9 +710,7 @@ header.main-header .container {
 }
 
 .btn-default,
-.dept-cta-btn,
-.services-btn a,
-.health-services-btn a {
+.dept-cta-btn {
   position: relative !important;
   overflow: hidden !important;
   z-index: 1 !important;
@@ -721,11 +720,7 @@ header.main-header .container {
 .btn-default::before,
 .btn-default::after,
 .dept-cta-btn::before,
-.dept-cta-btn::after,
-.services-btn a::before,
-.services-btn a::after,
-.health-services-btn a::before,
-.health-services-btn a::after {
+.dept-cta-btn::after {
   content: "" !important;
   position: absolute !important;
   top: 0 !important;
@@ -737,50 +732,33 @@ header.main-header .container {
 }
 
 .btn-default::before,
-.dept-cta-btn::before,
-.services-btn a::before,
-.health-services-btn a::before {
+.dept-cta-btn::before {
   left: 0 !important;
 }
 
 .btn-default::after,
-.dept-cta-btn::after,
-.services-btn a::after,
-.health-services-btn a::after {
+.dept-cta-btn::after {
   right: 0 !important;
 }
 
 .btn-default::before,
-.btn-default::after,
-.health-services-btn a::before,
-.health-services-btn a::after {
-  background-color: #07332F !important;
+.btn-default::after {
+  background-color: var(--btn-outline-shutter, #0A6B64) !important;
 }
 
 .dept-cta-btn::before,
 .dept-cta-btn::after {
-  background-color: #F7A582 !important;
-}
-
-.services-btn a::before,
-.services-btn a::after {
-  background-color: #07332F !important;
+  background-color: var(--btn-shutter-bg, #0284C7) !important;
 }
 
 .btn-default:hover::before,
 .btn-default:hover::after,
 .dept-cta-btn:hover::before,
-.dept-cta-btn:hover::after,
-.services-btn a:hover::before,
-.services-btn a:hover::after,
-.health-services-btn a:hover::before,
-.health-services-btn a:hover::after {
+.dept-cta-btn:hover::after {
   width: 52% !important;
 }
 
-.btn-default:hover,
-.services-btn a:hover,
-.health-services-btn a:hover {
+.btn-default:hover {
   color: #ffffff !important;
   transform: translateY(-2px);
 }
@@ -988,7 +966,7 @@ header.main-header .container {
 }
 
 .parth-footer {
-  background-color: #061d19;
+  background-color: var(--header-footer-bg);
   color: rgba(255, 255, 255, 0.8);
   padding-top: 75px;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1027,8 +1005,8 @@ header.main-header .container {
 }
 
 .footer-brand-text {
-  font-size: 0.92rem;
-  color: #8aa89f;
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.94);
   line-height: 1.7;
   margin-bottom: 22px;
 }
@@ -1043,30 +1021,34 @@ header.main-header .container {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .footer-social-icons a:hover {
-  background: #F7A582;
-  color: #07332F;
+  background: #0284C7;
+  border-color: #0284C7;
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
 }
 
 .footer-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 22px;
   position: relative;
   padding-bottom: 10px;
+  letter-spacing: 0.3px;
 }
 
 .footer-title::after {
@@ -1074,32 +1056,35 @@ header.main-header .container {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 35px;
-  height: 2.5px;
-  background: #F7A582;
-  border-radius: 2px;
+  width: 40px;
+  height: 3px;
+  background: #0284C7;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.5);
 }
 
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .footer-nav a {
-  font-size: 0.92rem;
-  color: #8aa89f;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   transition: all 0.25s ease;
   display: inline-block;
 }
 
 .footer-nav a:hover {
-  color: #F7A582;
-  transform: translateX(4px);
+  color: #38BDF8;
+  transform: translateX(6px);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
 }
 
 .footer-contact-details {
@@ -1115,32 +1100,33 @@ header.main-header .container {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 0.9rem;
-  color: #8aa89f;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.6;
 }
 
 .footer-contact-details li a {
-  color: #8aa89f;
+  color: rgba(255, 255, 255, 0.94);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-contact-details li a:hover {
-  color: #F7A582;
+  color: #38BDF8;
 }
 
 .contact-icon {
-  font-size: 1rem;
-  color: #F7A582;
+  font-size: 1.05rem;
+  color: #38BDF8;
   flex-shrink: 0;
   margin-top: 3px;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
 }
 
 .footer-newsletter-text {
-  font-size: 0.9rem;
-  color: #8aa89f;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.65;
   margin-bottom: 18px;
 }
 
@@ -1168,11 +1154,11 @@ header.main-header .container {
 }
 
 .subscribe-btn {
-  background: #F7A582;
-  color: #07332F;
-  border: none;
+  background: var(--btn-shutter-bg, #0284C7);
+  color: #ffffff !important;
+  border: 2px solid var(--btn-shutter-bg, #0284C7);
   border-radius: 50px;
-  padding: 10px 22px;
+  padding: 8px 22px;
   font-weight: 800;
   font-size: 0.9rem;
   cursor: pointer;
@@ -1180,13 +1166,14 @@ header.main-header .container {
 }
 
 .subscribe-btn:hover {
-  background: #ffffff;
-  transform: translateY(-1px);
+  color: #ffffff !important;
+  border-color: #38BDF8;
+  transform: translateY(-2px);
 }
 
 .footer-copyright-bar {
   padding: 24px 0;
-  background-color: #041411;
+  background-color: var(--header-footer-bg);
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.88rem;
   text-align: center;

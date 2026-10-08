@@ -1,8 +1,4 @@
-/* ============================================
-   Color Switcher - Theme Variables & Styles
-   ============================================ */
-
-/* Default Theme - Parth Original */
+/* Color Switcher & Theme Variables */
 :root,
 html[data-theme="parth-original"] {
     --primary-green: #1a5c52;
@@ -122,11 +118,7 @@ html[data-theme="kelly-green"] {
     --transparent-color: #555;
 }
 
-/* =========================================================
-   MEDICAL BUTTONS & DUAL-SHUTTER ANIMATION (Global Across All Pages)
-   ========================================================= */
-
-/* 1. Base Setup for All Primary Medical Action Buttons */
+/* Medical buttons & shutter effects */
 .btn-coral-pill,
 .btn-strip-appointment,
 .btn-cta-appointment,
@@ -153,7 +145,7 @@ html[data-theme="kelly-green"] {
     box-shadow: 0 4px 14px rgba(10, 107, 100, 0.28) !important;
 }
 
-/* 2. Special Navbar Book Appointment Button (Contrasting in Deep Teal Header) */
+/* Nav appointment button */
 .btn-appointment-nav {
     position: relative !important;
     display: inline-flex !important;
@@ -175,7 +167,7 @@ html[data-theme="kelly-green"] {
     box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
 }
 
-/* 3. Secondary / Card / Read More Outline Buttons */
+/* Outline buttons */
 .btn-default,
 .btn-peach-outline {
     position: relative !important;
@@ -196,7 +188,7 @@ html[data-theme="kelly-green"] {
     cursor: pointer !important;
 }
 
-/* 4. Footer Newsletter Send Button (White Text & Transparent Shutter) */
+/* Newsletter send button */
 .subscribe-btn {
     position: relative !important;
     display: inline-flex !important;
@@ -219,7 +211,7 @@ html[data-theme="kelly-green"] {
     white-space: nowrap !important;
 }
 
-/* Keep all inner elements above the shutter */
+/* Button text layer */
 .btn-coral-pill > *,
 .btn-appointment-nav > *,
 .btn-strip-appointment > *,
@@ -238,7 +230,7 @@ html[data-theme="kelly-green"] {
     pointer-events: none !important;
 }
 
-/* 5. Dual Shutter Panels for Action Buttons */
+/* Shutter pseudo elements */
 :is(
     .btn-coral-pill,
     .btn-peach-outline,
@@ -278,7 +270,7 @@ html[data-theme="kelly-green"] {
     pointer-events: none !important;
 }
 
-/* For outline buttons with raw text, place shutter at z-index: -1 so raw text is always visible */
+/* Outline shutter underlay */
 .btn-default::before,
 .btn-default::after,
 .btn-peach-outline::before,
@@ -294,7 +286,7 @@ html[data-theme="kelly-green"] {
     pointer-events: none !important;
 }
 
-/* Left panel comes from left */
+/* Left shutter */
 :is(
     .btn-coral-pill,
     .btn-peach-outline,
@@ -314,7 +306,7 @@ html[data-theme="kelly-green"] {
     right: auto !important;
 }
 
-/* Right panel comes from right */
+/* Right shutter */
 :is(
     .btn-coral-pill,
     .btn-peach-outline,
@@ -334,8 +326,7 @@ html[data-theme="kelly-green"] {
     left: auto !important;
 }
 
-/* 6. Distinct Shutter Colors */
-/* Primary Buttons Shutter -> Vibrant Medical Cyan / Ocean Blue */
+/* Shutter colors */
 :is(
     .btn-coral-pill,
     .btn-strip-appointment,
@@ -361,13 +352,13 @@ html[data-theme="kelly-green"] {
     background-color: var(--btn-shutter-bg, #0284C7) !important;
 }
 
-/* Navbar Button Shutter -> Deep Hospital Pine Teal */
+/* Nav shutter */
 .btn-appointment-nav::before,
 .btn-appointment-nav::after {
     background-color: var(--btn-nav-shutter, #07332F) !important;
 }
 
-/* Outline / Read More Buttons Shutter -> Deep Medical Teal */
+/* Outline shutter */
 .btn-default::before,
 .btn-default::after,
 .btn-peach-outline::before,
@@ -375,13 +366,13 @@ html[data-theme="kelly-green"] {
     background-color: var(--btn-outline-shutter, #0A6B64) !important;
 }
 
-/* Footer Subscribe Button Shutter -> Transparent Glass Highlight */
+/* Newsletter shutter */
 .subscribe-btn::before,
 .subscribe-btn::after {
     background-color: rgba(255, 255, 255, 0.28) !important;
 }
 
-/* 7. On Hover: Shutters Meet in Center (width 52% each) */
+/* Shutter hover expand */
 :is(
     .btn-coral-pill,
     .btn-peach-outline,
@@ -415,7 +406,7 @@ html[data-theme="kelly-green"] {
     width: 52% !important;
 }
 
-/* 8. Hover Text & Elevation */
+/* Hover elevation */
 :is(
     .btn-coral-pill,
     .btn-strip-appointment,
@@ -455,7 +446,7 @@ html[data-theme="kelly-green"] {
     box-shadow: 0 8px 20px rgba(10, 107, 100, 0.3) !important;
 }
 
-/* 9. TOP SERVICES Read More Link (About Page) - Text link only, NOT a button! */
+/* Services read more link */
 .services-btn a,
 .health-services-btn a {
     position: static !important;
@@ -715,10 +706,7 @@ html[data-theme="signal-violet"] {
     --transparent-color: #555;
 }
 
-/* ============================================
-   Custom Color Picker - Reference Style
-   (Cybron / Colorwheel + 3 circles + picker)
-   ============================================ */
+/* Custom Color Picker */
 
 /* ── Root Container ───────────────────────── */
 #ccp-root {
@@ -990,10 +978,7 @@ html[data-theme="signal-violet"] {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* =========================================================
-   GLOBAL HIGH-CONTRAST FOOTER STYLING (All Pages & Themes)
-   Prevents dull or faded text across all switcher themes
-   ========================================================= */
+/* Footer styling */
 .parth-footer {
     background-color: var(--header-footer-bg, #0A6B64) !important;
     color: rgba(255, 255, 255, 0.94) !important;
@@ -1001,7 +986,7 @@ html[data-theme="signal-violet"] {
     z-index: 10;
 }
 
-/* 1. Brand Mission / About Description */
+/* Brand text */
 .footer-brand-text {
     color: rgba(255, 255, 255, 0.94) !important;
     font-size: 0.95rem !important;
@@ -1011,7 +996,7 @@ html[data-theme="signal-violet"] {
     margin-bottom: 22px !important;
 }
 
-/* 2. Footer Section Titles (Quick Links, Contact Details, Newsletter) */
+/* Section titles */
 .footer-title {
     color: #FFFFFF !important;
     font-weight: 800 !important;
@@ -1035,7 +1020,7 @@ html[data-theme="signal-violet"] {
     box-shadow: 0 0 10px rgba(2, 132, 199, 0.6) !important;
 }
 
-/* 3. Quick Links (Home, About Us, Services, Blog, FAQs, Contact Us) */
+/* Quick links */
 .footer-nav {
     display: flex !important;
     flex-direction: column !important;
@@ -1065,7 +1050,7 @@ html[data-theme="signal-violet"] {
     text-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
 }
 
-/* 4. Contact Details (Address, Email, Phone, Timings) */
+/* Contact details */
 .footer-contact-details {
     display: flex !important;
     flex-direction: column !important;
@@ -1110,7 +1095,7 @@ html[data-theme="signal-violet"] {
     text-shadow: 0 0 10px rgba(56, 189, 248, 0.55) !important;
 }
 
-/* 5. Newsletter Description & Form */
+/* Newsletter */
 .footer-newsletter-text {
     color: rgba(255, 255, 255, 0.94) !important;
     font-size: 0.92rem !important;
@@ -1145,7 +1130,7 @@ html[data-theme="signal-violet"] {
     color: rgba(255, 255, 255, 0.75) !important;
 }
 
-/* 6. Social Media Icons */
+/* Social icons */
 .footer-social-icons {
     display: flex !important;
     align-items: center !important;
@@ -1175,7 +1160,7 @@ html[data-theme="signal-violet"] {
     box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
 }
 
-/* 7. Copyright Bar */
+/* Copyright bar */
 .footer-copyright-bar {
     background: rgba(0, 0, 0, 0.22) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -1191,16 +1176,13 @@ html[data-theme="signal-violet"] {
     font-weight: 500 !important;
 }
 
-/* 8. Extra Dark-Background Content (Quick strip card & CTA banner) */
+/* Dark section text */
 .strip-card-desc,
 .cta-desc {
     color: rgba(255, 255, 255, 0.94) !important;
 }
 
-/* =========================================================
-   MOBILE SCROLL-TRIGGERED SHUTTER ANIMATION
-   Opens/closes shutter smoothly as user scrolls up & down
-   ========================================================= */
+/* Mobile scroll shutter animation */
 @media (max-width: 991px), (hover: none) {
   :is(
     .btn-coral-pill,

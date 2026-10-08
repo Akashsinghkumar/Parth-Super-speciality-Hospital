@@ -705,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(floatWrap);
   }
 
-  // ── Auto-wrap raw text inside buttons in spans for perfect z-index layering ──
+  // Wrap button text for shutter layering
   document.querySelectorAll(
     '.btn-coral-pill, .btn-peach-outline, .btn-appointment-nav, .btn-strip-appointment, ' +
     '.btn-cta-appointment, .btn-send-pill, .subscribe-btn, .apt-submit-btn, ' +
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Mobile Scroll-Triggered Button Shutter Animation ──────────────────────
+  // Mobile scroll shutter animation
   let mobileShutterObserver = null;
   function initMobileShutterObserver() {
     const isMobile = window.innerWidth <= 991 || ('ontouchstart' in window);
